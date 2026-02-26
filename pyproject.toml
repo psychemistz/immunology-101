@@ -1,0 +1,61 @@
+[build-system]
+requires = ["setuptools>=68.0", "setuptools-scm>=8.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "immunology-101"
+version = "0.1.0"
+description = "Interactive terminal-based immunology course for bioinformaticians"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.9"
+authors = [{ name = "Psychemist" }]
+keywords = ["immunology", "education", "bioinformatics", "interactive", "terminal"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: Console",
+    "Intended Audience :: Education",
+    "Intended Audience :: Science/Research",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Education",
+    "Topic :: Scientific/Engineering :: Bio-Informatics",
+]
+dependencies = [
+    "rich>=13.0.0",
+    "typer>=0.9.0",
+    "pyyaml>=6.0",
+    "pydantic>=2.0.0",
+    "thefuzz[speedup]>=0.20.0",
+]
+
+[project.optional-dependencies]
+ai = ["anthropic>=0.40.0"]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+    "ruff>=0.4.0",
+]
+
+[project.scripts]
+imm101 = "immunology101.cli:app"
+
+[tool.setuptools.packages.find]
+include = ["immunology101*"]
+
+[tool.setuptools.package-data]
+immunology101 = ["content/**/*.yaml", "content/**/*.md"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-v"
+
+[tool.ruff]
+target-version = "py39"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N", "W", "UP"]

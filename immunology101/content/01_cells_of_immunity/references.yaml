@@ -1,0 +1,24 @@
+references:
+  - title: "Anatomy and Physiology 2e — Chapter 21: The Immune System"
+    url: "https://openstax.org/books/anatomy-and-physiology-2e/pages/21-introduction"
+    source: "OpenStax"
+    license: "CC BY 4.0"
+    notes: "Comprehensive undergraduate-level immune system overview."
+
+  - title: "Janeway's Immunobiology (summary resources)"
+    url: "https://www.ncbi.nlm.nih.gov/books/NBK10757/"
+    source: "NCBI Bookshelf"
+    license: "CC BY 4.0"
+    notes: "Gold-standard immunology textbook; selected chapters freely available."
+
+  - title: "Immune Cell Markers Guide"
+    url: "https://www.abcam.com/primary-antibodies/immune-cell-markers-poster"
+    source: "Abcam"
+    license: "Free educational resource"
+    notes: "Useful reference for scRNA-seq cell type annotation."
+
+  - title: "The Immune Epitope Database (IEDB)"
+    url: "https://www.iedb.org/"
+    source: "IEDB / NIAID"
+    license: "Public domain"
+    notes: "Database of experimentally characterised immune epitopes."

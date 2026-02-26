@@ -1,0 +1,123 @@
+exercises:
+  - id: "01_mc_innate_vs_adaptive"
+    type: "multiple_choice"
+    difficulty: "easy"
+    question: "Which branch of the immune system generates immunological memory?"
+    choices:
+      - "A) Innate immunity"
+      - "B) Adaptive immunity"
+      - "C) Both equally"
+      - "D) Neither — memory is a nervous system function"
+    answer: "B"
+    hint: "Think about which branch 'learns' from past encounters, like a trained ML model."
+    explanation: >
+      Adaptive immunity generates memory via long-lived memory B and T cells.
+      After initial exposure, these cells enable faster, stronger responses on
+      re-encounter — analogous to a cached model that doesn't need retraining.
+    tags: ["innate", "adaptive", "memory"]
+
+  - id: "01_mc_neutrophil"
+    type: "multiple_choice"
+    difficulty: "easy"
+    question: "Neutrophils are best described as:"
+    choices:
+      - "A) Long-lived cells that orchestrate adaptive responses"
+      - "B) Short-lived first responders of innate immunity"
+      - "C) Antibody-producing cells"
+      - "D) Cells that present antigens via MHC class II"
+    answer: "B"
+    hint: "They arrive first at infection sites and have a short lifespan — like worker threads."
+    explanation: >
+      Neutrophils are the most abundant innate immune cells. They are
+      short-lived, rapidly recruited to infection sites, and kill pathogens
+      via phagocytosis and neutrophil extracellular traps (NETs).
+    tags: ["innate", "neutrophil"]
+
+  - id: "01_matching_cells_roles"
+    type: "matching"
+    difficulty: "medium"
+    question: "Match each immune cell to its primary role:"
+    left_items:
+      - "Dendritic cell"
+      - "B cell"
+      - "Cytotoxic T cell (CD8+)"
+      - "Regulatory T cell"
+    right_items:
+      - "Antigen presentation to T cells"
+      - "Antibody production"
+      - "Killing infected cells"
+      - "Suppressing excessive immune responses"
+    answer:
+      "Dendritic cell": "Antigen presentation to T cells"
+      "B cell": "Antibody production"
+      "Cytotoxic T cell (CD8+)": "Killing infected cells"
+      "Regulatory T cell": "Suppressing excessive immune responses"
+    hint: "Think of the CS analogies: router, key-value store, kill-process, rate-limiter."
+    explanation: >
+      Dendritic cells are the primary antigen-presenting cells (routers).
+      B cells produce antibodies (key-value lookup). CD8+ T cells directly kill
+      target cells (kill by PID). Tregs suppress overactive responses (rate limiter).
+    tags: ["cells", "matching", "roles"]
+
+  - id: "01_fill_mhc"
+    type: "fill_in_the_blank"
+    difficulty: "medium"
+    question: "MHC class II molecules are found on professional ____-presenting cells and are recognised by CD4+ T cells."
+    answer: "antigen"
+    hint: "These cells 'present' pieces of pathogens to other immune cells."
+    explanation: >
+      MHC class II is expressed on professional antigen-presenting cells (APCs)
+      — dendritic cells, macrophages, and B cells. They display extracellular
+      peptide fragments to CD4+ helper T cells.
+    tags: ["MHC", "antigen presentation"]
+
+  - id: "01_ordering_immune_response"
+    type: "ordering"
+    difficulty: "medium"
+    question: "Arrange these events in the correct order of a typical immune response to a new pathogen:"
+    choices:
+      - "Pathogen breaches epithelial barrier"
+      - "Innate cells (neutrophils, macrophages) respond"
+      - "Dendritic cells capture antigen and migrate to lymph node"
+      - "T cells are activated by antigen presentation"
+      - "B cells produce specific antibodies"
+      - "Memory cells form for future protection"
+    answer:
+      - "Pathogen breaches epithelial barrier"
+      - "Innate cells (neutrophils, macrophages) respond"
+      - "Dendritic cells capture antigen and migrate to lymph node"
+      - "T cells are activated by antigen presentation"
+      - "B cells produce specific antibodies"
+      - "Memory cells form for future protection"
+    hint: "Start with the barrier breach, end with long-term memory — like a pipeline."
+    explanation: >
+      An immune response follows a pipeline: barrier breach → innate response →
+      antigen capture and presentation → adaptive activation (T then B cells) →
+      memory formation. This sequential process takes days for a first encounter.
+    tags: ["immune response", "ordering"]
+
+  - id: "01_case_scrna"
+    type: "case_study"
+    difficulty: "hard"
+    question: >
+      You are analysing scRNA-seq data from a tumour biopsy. After clustering,
+      you find a cluster highly expressing CD3E, CD8A, GZMB, and PRF1.
+
+      What cell type is this cluster most likely? What is the functional
+      significance of GZMB and PRF1 expression?
+    answer:
+      - "cytotoxic T cell"
+      - "CD8"
+      - "granzyme"
+      - "perforin"
+      - "killing"
+      - "apoptosis"
+    hint: "CD3 marks T cells, CD8A distinguishes a subtype, and GZMB/PRF1 are cytolytic molecules."
+    explanation: >
+      This cluster represents cytotoxic T lymphocytes (CTLs / CD8+ T cells).
+      CD3E is a pan-T cell marker, CD8A identifies the cytotoxic subset.
+      GZMB (granzyme B) and PRF1 (perforin) are key effector molecules:
+      perforin forms pores in target cell membranes, and granzyme B enters
+      through those pores to trigger apoptosis. High expression suggests
+      active anti-tumour cytotoxicity.
+    tags: ["scRNA-seq", "case study", "CD8", "cytotoxic"]

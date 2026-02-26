@@ -1,0 +1,14 @@
+title: "Immunology 101"
+version: "0.1.0"
+description: >
+  An interactive immunology course designed for bioinformaticians and
+  CS-background learners. Concepts are explained with computational
+  analogies and tied to real bioinformatics workflows.
+
+modules:
+  - id: "01_cells_of_immunity"
+    title: "Cells of the Immune System"
+    description: "Meet the major immune cell types — the 'processes' of your body's operating system."
+    order: 1
+    prerequisites: []
+    directory: "01_cells_of_immunity"
