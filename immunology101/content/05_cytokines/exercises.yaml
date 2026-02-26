@@ -131,3 +131,111 @@ exercises:
       downstream IL-6 signalling. This case shows how scRNA-seq + ligand-
       receptor analysis can validate therapeutic targets.
     tags: ["case study", "CellChat", "TNF", "IL-6", "RA"]
+
+  - id: "05_mc_cytokine_storm"
+    type: "multiple_choice"
+    difficulty: "medium"
+    question: "A cytokine storm is characterised by:"
+    choices:
+      - "A) Complete absence of cytokine production"
+      - "B) Uncontrolled positive feedback of pro-inflammatory cytokines causing tissue damage"
+      - "C) Selective production of only anti-inflammatory cytokines"
+      - "D) Normal cytokine signalling during a mild infection"
+    answer: "B"
+    hint: "A feedback loop with no rate limiter — messages amplify until the system crashes."
+    explanation: >
+      A cytokine storm is an uncontrolled amplification of pro-inflammatory
+      cytokines (TNF-α, IL-1, IL-6, IFN-γ) that causes massive inflammation,
+      tissue damage, and potentially multi-organ failure. It was a key driver
+      of severe COVID-19 cases. The positive feedback loop overwhelms the
+      normal regulatory mechanisms (IL-10, Tregs).
+    tags: ["cytokine storm", "inflammation"]
+
+  - id: "05_mc_nfkb"
+    type: "multiple_choice"
+    difficulty: "hard"
+    question: "The NF-κB signalling pathway is activated by TNF-α and IL-1 and functions as:"
+    choices:
+      - "A) A master switch for anti-inflammatory gene expression only"
+      - "B) A pathway that directly phosphorylates STAT transcription factors"
+      - "C) A master switch for pro-inflammatory gene expression, acting as an emergency broadcast system"
+      - "D) A pathway exclusive to B cell antibody production"
+    answer: "C"
+    hint: "NF-κB is the emergency broadcast system — master switch for inflammation."
+    explanation: >
+      NF-κB is a transcription factor family that activates pro-inflammatory
+      gene expression in response to TNF-α, IL-1, and pathogen signals. When
+      activated, it drives expression of cytokines, chemokines, adhesion
+      molecules, and anti-apoptotic factors. It is distinct from the JAK-STAT
+      pathway (used by most interleukins/interferons) and plays a central role
+      in inflammation and innate immunity.
+    tags: ["NF-κB", "signalling", "inflammation"]
+
+  - id: "05_fill_autocrine"
+    type: "fill_in_the_blank"
+    difficulty: "easy"
+    question: "When a T cell secretes IL-2 and the same cell responds to it, this is called ____ signalling."
+    answer: "autocrine"
+    hint: "Auto = self. The cell signals itself — like a recursive function call."
+    explanation: >
+      Autocrine signalling occurs when a cell produces a cytokine that acts
+      on itself. IL-2 autocrine signalling by T cells drives their own
+      proliferation after activation. This contrasts with paracrine (nearby
+      cells) and endocrine (distant cells via blood) signalling modes.
+    tags: ["autocrine", "signalling mode"]
+
+  - id: "05_matching_pathways"
+    type: "matching"
+    difficulty: "hard"
+    question: "Match each signalling pathway to its primary activators and role:"
+    left_items:
+      - "JAK-STAT"
+      - "NF-κB"
+      - "MAPK"
+    right_items:
+      - "Most interleukins and interferons; direct transcription factor activation"
+      - "TNF-α and IL-1; master switch for pro-inflammatory genes"
+      - "Growth factors and some cytokines; controls proliferation and differentiation"
+    answer:
+      "JAK-STAT": "Most interleukins and interferons; direct transcription factor activation"
+      "NF-κB": "TNF-α and IL-1; master switch for pro-inflammatory genes"
+      "MAPK": "Growth factors and some cytokines; controls proliferation and differentiation"
+    hint: "JAK-STAT = the main cytokine highway. NF-κB = emergency broadcast. MAPK = growth control."
+    explanation: >
+      These three pathways handle different aspects of immune signalling.
+      JAK-STAT is the primary pathway for interleukin/interferon receptors,
+      directly activating gene transcription via STAT dimerisation. NF-κB
+      responds to danger signals and inflammatory cytokines. MAPK controls
+      cell growth and differentiation. Many immune responses involve crosstalk
+      between all three.
+    tags: ["signalling", "pathways", "matching"]
+
+  - id: "05_case_cytokine_profiling"
+    type: "case_study"
+    difficulty: "medium"
+    question: >
+      You perform multiplex cytokine profiling (Luminex) on serum from ICU
+      patients with severe COVID-19 vs mild cases. Severe patients show
+      dramatically elevated IL-6, TNF-α, and IL-1β, while IL-10 levels are
+      paradoxically also high.
+
+      What does this cytokine profile represent? Why might IL-10 be elevated
+      despite the pro-inflammatory state?
+    answer:
+      - "cytokine storm"
+      - "pro-inflammatory"
+      - "IL-6"
+      - "TNF"
+      - "feedback"
+      - "regulatory"
+      - "anti-inflammatory"
+    hint: "High pro-inflammatory + high IL-10 = the system is trying to brake, but the accelerator is stuck."
+    explanation: >
+      The elevated IL-6, TNF-α, and IL-1β indicate a cytokine storm — an
+      uncontrolled pro-inflammatory amplification loop. The paradoxically high
+      IL-10 represents the immune system's attempt to counterregulate: IL-10
+      is produced by Tregs and macrophages as a negative feedback mechanism.
+      However, in a cytokine storm, the regulatory response is overwhelmed
+      by the magnitude of pro-inflammatory signalling. The IL-6/IL-10 ratio
+      is actually a clinical prognostic marker for COVID-19 severity.
+    tags: ["case study", "cytokine profiling", "COVID-19"]

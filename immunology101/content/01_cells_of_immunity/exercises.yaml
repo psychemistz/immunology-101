@@ -121,3 +121,108 @@ exercises:
       through those pores to trigger apoptosis. High expression suggests
       active anti-tumour cytotoxicity.
     tags: ["scRNA-seq", "case study", "CD8", "cytotoxic"]
+
+  - id: "01_mc_mhc_class_i"
+    type: "multiple_choice"
+    difficulty: "medium"
+    question: "Which statement about MHC class I molecules is correct?"
+    choices:
+      - "A) They are only found on professional antigen-presenting cells"
+      - "B) They present intracellular peptides and are recognised by CD8+ T cells"
+      - "C) They present extracellular peptides and are recognised by CD4+ T cells"
+      - "D) They are only expressed during infection"
+    answer: "B"
+    hint: "MHC I is on all nucleated cells — every process reports its loaded modules to the kernel."
+    explanation: >
+      MHC class I molecules are present on all nucleated cells and display
+      peptide fragments derived from intracellular proteins (both self and
+      viral). CD8+ cytotoxic T cells survey MHC I to detect infected or
+      abnormal cells. MHC class II, by contrast, is restricted to professional
+      APCs and presents extracellular antigens to CD4+ T cells.
+    tags: ["MHC", "class I", "CD8"]
+
+  - id: "01_mc_vdj"
+    type: "multiple_choice"
+    difficulty: "hard"
+    question: "V(D)J recombination generates receptor diversity in B and T cells. Which feature makes this process analogous to combinatorial parameter generation?"
+    choices:
+      - "A) It always produces the same receptor sequence"
+      - "B) It randomly joins Variable, Diversity, and Joining gene segments with additional junctional diversity"
+      - "C) It copies receptor genes from the parent organism without modification"
+      - "D) It requires exposure to a specific antigen before rearrangement begins"
+    answer: "B"
+    hint: "Combinatorial joining of segments, plus random nucleotide additions at junctions, creates enormous diversity."
+    explanation: >
+      V(D)J recombination randomly selects one V, one D (heavy chain), and one
+      J segment and joins them. Random nucleotide additions and deletions at the
+      junctions (junctional diversity) further expand the repertoire. This
+      combinatorial process generates ~10^11 unique receptor specificities
+      without requiring prior antigen exposure — diversity is pre-built.
+    tags: ["V(D)J", "diversity", "adaptive"]
+
+  - id: "01_fill_nk"
+    type: "fill_in_the_blank"
+    difficulty: "easy"
+    question: "Natural ____ cells are innate lymphocytes that can kill virus-infected and tumour cells without prior antigen-specific activation."
+    answer: "killer"
+    hint: "These cells are named for their ability to 'kill' on first encounter — like a heuristic anomaly detector."
+    explanation: >
+      Natural killer (NK) cells are innate lymphocytes that detect and kill
+      abnormal cells without needing prior sensitisation. They recognise
+      targets through 'missing self' (absence of MHC I) and stress ligands,
+      providing rapid anti-viral and anti-tumour responses.
+    tags: ["NK cell", "innate"]
+
+  - id: "01_matching_innate_analogies"
+    type: "matching"
+    difficulty: "hard"
+    question: "Match each immune cell to its CS analogy and rationale:"
+    left_items:
+      - "Macrophage"
+      - "Mast cell"
+      - "Memory B cell"
+      - "Helper T cell (CD4+)"
+    right_items:
+      - "Long-running daemon — persists in tissues, phagocytoses and logs threats"
+      - "Event emitter — releases histamine on activation, triggers rapid cascading responses"
+      - "Cache layer — stores pre-computed high-affinity responses for instant recall"
+      - "Scheduler/orchestrator — directs other cells via cytokine signals"
+    answer:
+      "Macrophage": "Long-running daemon — persists in tissues, phagocytoses and logs threats"
+      "Mast cell": "Event emitter — releases histamine on activation, triggers rapid cascading responses"
+      "Memory B cell": "Cache layer — stores pre-computed high-affinity responses for instant recall"
+      "Helper T cell (CD4+)": "Scheduler/orchestrator — directs other cells via cytokine signals"
+    hint: "Think about each cell's behaviour pattern: long-lived vs short-lived, signalling vs effector."
+    explanation: >
+      Macrophages are tissue-resident sentinels (daemons) that phagocytose and
+      present antigens. Mast cells rapidly degranulate histamine (event emission).
+      Memory B cells cache high-affinity antibody responses. CD4+ helper T cells
+      orchestrate immune responses by secreting cytokines that direct other cells.
+    tags: ["cells", "analogies", "matching"]
+
+  - id: "01_case_deconvolution"
+    type: "case_study"
+    difficulty: "medium"
+    question: >
+      You run immune deconvolution (CIBERSORTx) on bulk RNA-seq from a tissue
+      biopsy and estimate the following cell fractions: CD8+ T cells (35%),
+      macrophages (25%), B cells (5%), NK cells (20%), Tregs (15%).
+
+      What does this immune composition suggest about the tissue environment?
+      Which cell type might be of concern if this were a tumour sample?
+    answer:
+      - "infiltration"
+      - "CD8"
+      - "NK"
+      - "cytotoxic"
+      - "Treg"
+      - "immunosuppressive"
+    hint: "High CD8+ and NK suggests cytotoxic activity. But what might Tregs be doing?"
+    explanation: >
+      The high CD8+ T cell and NK cell fractions suggest active cytotoxic
+      immune surveillance — consistent with an inflamed or 'hot' tissue. However,
+      the 15% Treg fraction is notable: in a tumour context, Tregs suppress
+      anti-tumour immunity. The balance between cytotoxic effectors (CD8+, NK)
+      and immunosuppressive cells (Tregs) determines whether the immune
+      response is effective.
+    tags: ["case study", "deconvolution", "CIBERSORTx"]

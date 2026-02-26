@@ -139,3 +139,120 @@ exercises:
       and their proximity to PD-L1⁺ tumour cells — both strong predictors
       of checkpoint response.
     tags: ["case study", "CIBERSORTx", "TME", "immunotherapy"]
+
+  - id: "08_mc_car_t"
+    type: "multiple_choice"
+    difficulty: "medium"
+    question: "CAR-T cell therapy involves:"
+    choices:
+      - "A) Injecting naked mRNA into the tumour"
+      - "B) Engineering a patient's T cells to express a synthetic receptor targeting a tumour antigen"
+      - "C) Blocking PD-1 with a monoclonal antibody"
+      - "D) Transferring B cells from a healthy donor"
+    answer: "B"
+    hint: "CAR = Chimeric Antigen Receptor. The T cell is custom-built to target a specific vulnerability."
+    explanation: >
+      CAR-T therapy harvests a patient's T cells, engineers them to express a
+      chimeric antigen receptor (combining an antibody-derived binding domain
+      with T cell signalling domains), expands them ex vivo, and re-infuses
+      them. The CAR enables MHC-independent recognition of tumour surface
+      antigens (e.g., CD19 for B cell lymphomas). It has shown remarkable
+      efficacy in certain blood cancers.
+    tags: ["CAR-T", "immunotherapy"]
+
+  - id: "08_mc_hot_cold"
+    type: "multiple_choice"
+    difficulty: "hard"
+    question: "A 'cold' tumour is unlikely to respond to checkpoint inhibitor monotherapy because:"
+    choices:
+      - "A) It has too many neoantigens"
+      - "B) It lacks significant T cell infiltration, so there are no T cells to 'release the brakes' on"
+      - "C) It expresses too much MHC class I"
+      - "D) It has an active Th1 response that doesn't need boosting"
+    answer: "B"
+    hint: "Checkpoint inhibitors release brakes on T cells — but if there are no T cells present, there's nothing to unleash."
+    explanation: >
+      Cold tumours have minimal T cell infiltration, meaning checkpoint
+      inhibitors have few or no effector T cells to reinvigorate. These
+      tumours may need combination strategies: radiation or chemotherapy
+      to induce immunogenic cell death, oncolytic viruses to inflame the
+      TME, or STING agonists to recruit T cells before checkpoint blockade
+      can be effective. Converting cold tumours to hot ones is a major focus
+      of current immunotherapy research.
+    tags: ["hot tumour", "cold tumour", "checkpoint"]
+
+  - id: "08_fill_missing_self"
+    type: "fill_in_the_blank"
+    difficulty: "easy"
+    question: "NK cells kill tumour cells that downregulate ____ class I molecules through 'missing self' recognition."
+    answer: "MHC"
+    hint: "When cells lose their 'identity badge', NK cells detect the absence — anomaly detection for missing expected headers."
+    explanation: >
+      NK cells are activated when target cells lack MHC class I expression
+      ('missing self' hypothesis). Since many tumours downregulate MHC I to
+      escape CD8+ T cell recognition, they become vulnerable to NK cell killing
+      instead. This creates a complementary surveillance system: CD8+ T cells
+      handle MHC I-expressing targets, NK cells handle MHC I-deficient targets.
+    tags: ["NK cell", "missing self", "MHC"]
+
+  - id: "08_matching_immunotherapies"
+    type: "matching"
+    difficulty: "hard"
+    question: "Match each immunotherapy approach to its mechanism of action:"
+    left_items:
+      - "Anti-PD-1 (pembrolizumab)"
+      - "Anti-CTLA-4 (ipilimumab)"
+      - "CAR-T cells"
+      - "Bispecific antibodies"
+      - "Cancer vaccines"
+    right_items:
+      - "Block exhaustion checkpoint to restore effector T cell activity"
+      - "Enhance T cell priming by removing co-inhibitory brake during activation"
+      - "Engineered T cells with synthetic receptors for MHC-independent tumour killing"
+      - "Bridge T cells directly to tumour cells via dual-specificity binding"
+      - "Prime new immune responses against tumour-specific antigens"
+    answer:
+      "Anti-PD-1 (pembrolizumab)": "Block exhaustion checkpoint to restore effector T cell activity"
+      "Anti-CTLA-4 (ipilimumab)": "Enhance T cell priming by removing co-inhibitory brake during activation"
+      "CAR-T cells": "Engineered T cells with synthetic receptors for MHC-independent tumour killing"
+      "Bispecific antibodies": "Bridge T cells directly to tumour cells via dual-specificity binding"
+      "Cancer vaccines": "Prime new immune responses against tumour-specific antigens"
+    hint: "PD-1 = effector brake, CTLA-4 = priming brake, CAR-T = custom weapon, bispecific = adapter, vaccine = training."
+    explanation: >
+      Each immunotherapy targets a different step in anti-tumour immunity.
+      Anti-PD-1 reinvigorates exhausted T cells in the tumour. Anti-CTLA-4
+      enhances initial T cell priming in lymph nodes. CAR-T provides engineered
+      effectors. Bispecifics physically bridge T cells to tumour cells.
+      Cancer vaccines train new T cell responses against tumour antigens.
+      Combination approaches targeting multiple steps show the greatest promise.
+    tags: ["immunotherapy", "matching"]
+
+  - id: "08_case_tmb"
+    type: "case_study"
+    difficulty: "medium"
+    question: >
+      You calculate tumour mutational burden (TMB) from whole-exome sequencing
+      of 100 lung cancer patients. Patients with TMB > 10 mutations/Mb show
+      significantly better responses to anti-PD-1 therapy than those with
+      low TMB.
+
+      Why would a higher mutational burden predict better response to
+      checkpoint inhibitors?
+    answer:
+      - "neoantigen"
+      - "mutation"
+      - "CD8"
+      - "T cell"
+      - "recognition"
+      - "immunogenic"
+    hint: "More mutations = more potential neoantigens = more targets for T cells to recognise."
+    explanation: >
+      Higher TMB means more somatic mutations, increasing the probability of
+      generating immunogenic neoantigens presented on MHC class I. More
+      neoantigens provide more targets for CD8+ T cells, resulting in a
+      larger pre-existing anti-tumour T cell response that can be unleashed
+      by checkpoint inhibitors. Low TMB tumours generate fewer neoantigens,
+      making them less visible to the immune system and less responsive to
+      checkpoint blockade. TMB is now an FDA-approved biomarker for
+      pembrolizumab across solid tumours.
+    tags: ["case study", "TMB", "biomarker"]

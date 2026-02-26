@@ -140,3 +140,122 @@ exercises:
       + diverse TCR repertoire predicts response. This integrates concepts
       from nearly every module in the course.
     tags: ["case study", "integrative", "biomarker", "immunotherapy"]
+
+  - id: "10_mc_iedb"
+    type: "multiple_choice"
+    difficulty: "medium"
+    question: "The Immune Epitope Database (IEDB) is primarily used for:"
+    choices:
+      - "A) Storing raw sequencing reads from scRNA-seq experiments"
+      - "B) Curating experimentally validated B cell and T cell epitopes and MHC ligands"
+      - "C) Hosting phylogenetic trees of pathogens"
+      - "D) Providing pre-trained deep learning models for cell type annotation"
+    answer: "B"
+    hint: "IEDB = Immune Epitope Database. It's a curated repository of epitope data."
+    explanation: >
+      IEDB (iedb.org) is a comprehensive database of experimentally validated
+      immune epitopes — peptides recognised by B cells, T cells, or bound by
+      MHC molecules. It also provides analysis tools for epitope prediction,
+      population coverage analysis, and conservation analysis. It is a
+      cornerstone resource for vaccine design and T cell epitope prediction.
+    tags: ["IEDB", "database", "epitope"]
+
+  - id: "10_mc_cell_markers"
+    type: "multiple_choice"
+    difficulty: "hard"
+    question: "In scRNA-seq analysis, you find a cluster expressing CD68, CD163, and MRC1. This cluster most likely represents:"
+    choices:
+      - "A) CD8+ cytotoxic T cells"
+      - "B) B cells"
+      - "C) Macrophages (M2-polarised)"
+      - "D) Dendritic cells"
+    answer: "C"
+    hint: "CD68 is a pan-macrophage marker, while CD163 and MRC1 (CD206) indicate M2 polarisation."
+    explanation: >
+      CD68 is a canonical macrophage marker. CD163 (scavenger receptor) and
+      MRC1/CD206 (mannose receptor) are markers of M2-polarised (alternatively
+      activated) macrophages, which are associated with anti-inflammatory
+      responses, tissue repair, and in tumour contexts, immunosuppression.
+      Knowing cell markers is essential for accurate annotation of immune
+      cell types in scRNA-seq clustering.
+    tags: ["scRNA-seq", "markers", "macrophage"]
+
+  - id: "10_fill_optitype"
+    type: "fill_in_the_blank"
+    difficulty: "easy"
+    question: "____ typing from sequencing data is a critical first step in neoantigen prediction, determining which peptides a patient's MHC molecules can present."
+    answer: "HLA"
+    hint: "These are the most polymorphic genes in the human genome — each person's alleles determine their peptide presentation repertoire."
+    explanation: >
+      HLA (Human Leukocyte Antigen) typing determines a patient's MHC alleles,
+      which dictate which peptides can be presented to T cells. Tools like
+      OptiType, Polysolver, and HLA-HD perform computational HLA genotyping
+      from WGS or RNA-seq data. This is essential for neoantigen prediction,
+      transplant matching, and understanding autoimmune disease risk.
+    tags: ["HLA", "typing", "neoantigen"]
+
+  - id: "10_matching_databases"
+    type: "matching"
+    difficulty: "hard"
+    question: "Match each immunology database to its primary content:"
+    left_items:
+      - "IEDB"
+      - "IMGT"
+      - "VDJdb"
+      - "ImmPort"
+      - "TCIA"
+    right_items:
+      - "Curated B cell/T cell epitopes and MHC ligand data"
+      - "Immunoglobulin and TCR gene nomenclature and sequences"
+      - "Curated TCR-epitope associations linking receptors to antigens"
+      - "Shared immunology research data repository (NIAID-funded)"
+      - "Tumour immune characterisation data for immuno-oncology"
+    answer:
+      "IEDB": "Curated B cell/T cell epitopes and MHC ligand data"
+      "IMGT": "Immunoglobulin and TCR gene nomenclature and sequences"
+      "VDJdb": "Curated TCR-epitope associations linking receptors to antigens"
+      "ImmPort": "Shared immunology research data repository (NIAID-funded)"
+      "TCIA": "Tumour immune characterisation data for immuno-oncology"
+    hint: "IEDB = epitopes, IMGT = gene nomenclature, VDJdb = TCR-antigen pairs, ImmPort = shared data, TCIA = tumour immunity."
+    explanation: >
+      Each database serves a distinct role in computational immunology. IEDB
+      catalogues epitope data. IMGT standardises immunoglobulin/TCR gene
+      nomenclature. VDJdb links TCR sequences to their cognate antigens.
+      ImmPort provides a shared repository for immunology research data.
+      TCIA focuses on tumour-immune interactions. Familiarity with these
+      resources is essential for any computational immunology project.
+    tags: ["databases", "matching"]
+
+  - id: "10_case_repertoire"
+    type: "case_study"
+    difficulty: "medium"
+    question: >
+      You analyse TCR-seq data from blood samples of melanoma patients before
+      and after anti-PD-1 treatment. Responders show a significant increase in
+      the frequency of specific TCR clonotypes post-treatment, while
+      non-responders show no clonal expansion. The expanding clones have
+      CDR3 sequences that are predicted to bind known melanoma neoantigens.
+
+      What does clonal expansion of neoantigen-reactive TCRs indicate about
+      the mechanism of checkpoint therapy? How could this inform patient
+      monitoring?
+    answer:
+      - "clonal expansion"
+      - "neoantigen"
+      - "TCR"
+      - "checkpoint"
+      - "antigen-specific"
+      - "biomarker"
+      - "monitoring"
+    hint: "Checkpoint therapy reinvigorates specific anti-tumour T cell clones — their expansion is measurable in blood."
+    explanation: >
+      Clonal expansion of neoantigen-reactive TCRs indicates that anti-PD-1
+      therapy specifically reinvigorates pre-existing tumour-reactive T cells
+      rather than generating entirely new responses. The expanding clones are
+      antigen-driven (specific CDR3 sequences), confirming that the mechanism
+      involves releasing checkpoint-mediated suppression of tumour-specific
+      T cells. For patient monitoring, tracking these tumour-reactive TCR
+      clonotypes in blood (liquid biopsy) could serve as an early biomarker
+      of response — clonal expansion at week 3 predicting clinical response
+      at month 3.
+    tags: ["case study", "TCR-seq", "repertoire", "checkpoint"]

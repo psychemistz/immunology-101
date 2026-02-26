@@ -132,3 +132,115 @@ exercises:
       T cell clones are being repeatedly activated by citrullinated peptides,
       driving chronic autoimmune joint inflammation.
     tags: ["case study", "HLA", "GWAS", "RA", "autoimmunity"]
+
+  - id: "06_mc_mimicry"
+    type: "multiple_choice"
+    difficulty: "medium"
+    question: "Molecular mimicry can trigger autoimmunity because:"
+    choices:
+      - "A) Pathogens directly destroy immune cells"
+      - "B) Pathogen epitopes structurally resemble self-antigens, causing cross-reactive immune responses"
+      - "C) Pathogens enhance Treg function"
+      - "D) Pathogens block MHC expression on all cells"
+    answer: "B"
+    hint: "The pathogen's molecular 'signature' is so similar to a self-protein that immune cells attack both."
+    explanation: >
+      Molecular mimicry occurs when pathogen-derived epitopes share structural
+      similarity with host proteins. Immune cells activated against the pathogen
+      cross-react with the similar self-antigen, triggering autoimmunity.
+      Examples include Streptococcus and rheumatic heart disease (streptococcal
+      M protein mimics cardiac myosin), and EBV and multiple sclerosis.
+    tags: ["molecular mimicry", "autoimmunity"]
+
+  - id: "06_mc_receptor_editing"
+    type: "multiple_choice"
+    difficulty: "hard"
+    question: "During B cell development, a self-reactive immature B cell can be rescued through receptor editing. What does this involve?"
+    choices:
+      - "A) The B cell switches from IgM to IgG production"
+      - "B) The B cell rearranges its light chain genes to change its receptor specificity"
+      - "C) The B cell migrates to the thymus for positive selection"
+      - "D) The B cell undergoes somatic hypermutation to reduce self-reactivity"
+    answer: "B"
+    hint: "Editing = retry with new parameters. The cell gets a second chance by rearranging a new light chain."
+    explanation: >
+      Receptor editing allows self-reactive immature B cells in the bone marrow
+      to undergo secondary light chain rearrangement, generating a new BCR
+      with different antigen specificity. If the new receptor is no longer
+      self-reactive, the cell survives. If editing fails, the cell undergoes
+      clonal deletion (apoptosis). This is a central tolerance mechanism
+      unique to B cells.
+    tags: ["receptor editing", "B cell", "central tolerance"]
+
+  - id: "06_fill_privileged"
+    type: "fill_in_the_blank"
+    difficulty: "easy"
+    question: "The brain, eyes, and testes are immune-____ sites where physical barriers limit immune cell access to prevent inflammatory damage."
+    answer: "privileged"
+    hint: "These sites are 'privileged' with limited immune access — like an air-gapped network."
+    explanation: >
+      Immune-privileged sites have physical barriers (e.g., blood-brain barrier,
+      blood-testis barrier, blood-retinal barrier) that restrict immune cell
+      entry. This prevents inflammation-mediated damage to sensitive tissues.
+      However, if these barriers are breached (e.g., by trauma or infection),
+      exposure of previously hidden self-antigens can trigger autoimmune
+      responses.
+    tags: ["immune privilege", "tolerance"]
+
+  - id: "06_matching_autoimmune_factors"
+    type: "matching"
+    difficulty: "hard"
+    question: "Match each contributing factor in autoimmunity to its mechanism:"
+    left_items:
+      - "HLA genetic susceptibility"
+      - "Molecular mimicry"
+      - "Bystander activation"
+      - "Defective Tregs"
+    right_items:
+      - "Specific MHC alleles bind and present self-peptides more efficiently"
+      - "Pathogen epitopes resemble self-antigens, causing cross-reactive T cells"
+      - "Tissue inflammation exposes hidden self-antigens to the immune system"
+      - "Reduced suppressive function allows autoreactive cells to expand"
+    answer:
+      "HLA genetic susceptibility": "Specific MHC alleles bind and present self-peptides more efficiently"
+      "Molecular mimicry": "Pathogen epitopes resemble self-antigens, causing cross-reactive T cells"
+      "Bystander activation": "Tissue inflammation exposes hidden self-antigens to the immune system"
+      "Defective Tregs": "Reduced suppressive function allows autoreactive cells to expand"
+    hint: "Each factor breaks tolerance at a different level: presentation, cross-reactivity, exposure, or suppression."
+    explanation: >
+      Autoimmunity typically requires multiple contributing factors. HLA alleles
+      determine which self-peptides are presented. Molecular mimicry causes
+      cross-reactivity between pathogen and self. Bystander activation from
+      tissue damage exposes hidden antigens. Defective Tregs fail to suppress
+      autoreactive clones. Most autoimmune diseases involve a combination
+      of genetic predisposition and environmental triggers.
+    tags: ["autoimmunity", "risk factors", "matching"]
+
+  - id: "06_case_ipex"
+    type: "case_study"
+    difficulty: "medium"
+    question: >
+      A newborn presents with severe multi-organ autoimmunity: type 1 diabetes,
+      thyroiditis, and inflammatory bowel disease within the first year of life.
+      Genetic testing reveals a loss-of-function mutation in the FOXP3 gene.
+
+      What is the diagnosis? Explain why loss of FOXP3 leads to multi-organ
+      autoimmunity.
+    answer:
+      - "IPEX"
+      - "Treg"
+      - "FOXP3"
+      - "suppression"
+      - "tolerance"
+      - "regulatory"
+    hint: "FOXP3 is the master transcription factor for Tregs. Without it, there is no immune suppression."
+    explanation: >
+      This is IPEX syndrome (Immune dysregulation, Polyendocrinopathy,
+      Enteropathy, X-linked). FOXP3 is the master transcription factor
+      required for Treg development and function. Without functional Tregs,
+      the immune system lacks its primary peripheral tolerance mechanism —
+      autoreactive T cells that escaped thymic selection have no suppressive
+      counterbalance. The result is widespread, aggressive autoimmunity
+      affecting multiple organs simultaneously. This demonstrates that
+      Tregs are essential for maintaining self-tolerance throughout life.
+    tags: ["case study", "IPEX", "FOXP3", "Treg"]

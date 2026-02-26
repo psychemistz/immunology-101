@@ -135,3 +135,121 @@ exercises:
       vaccine formulations targeting new epitopes, and monitoring of
       neutralisation escape in convalescent/vaccinated populations.
     tags: ["case study", "phylogenetics", "SARS-CoV-2", "immune evasion"]
+
+  - id: "09_mc_superantigen"
+    type: "multiple_choice"
+    difficulty: "medium"
+    question: "Bacterial superantigens (e.g., TSST-1 from Staphylococcus) cause immune pathology by:"
+    choices:
+      - "A) Specifically activating only one T cell clone"
+      - "B) Non-specifically activating up to 20% of all T cells, triggering a massive cytokine release"
+      - "C) Blocking all T cell receptors from binding MHC"
+      - "D) Destroying B cells and antibody production"
+    answer: "B"
+    hint: "Superantigens bypass normal antigen processing — they cross-link TCR and MHC directly, activating T cells en masse."
+    explanation: >
+      Superantigens bind directly to the outside of MHC class II and TCR Vβ
+      regions, bypassing normal antigen processing. This non-specifically
+      activates a huge fraction of T cells (up to 20%, vs 0.001% in a normal
+      response), causing massive cytokine release (cytokine storm), which can
+      lead to toxic shock syndrome, fever, and organ failure.
+    tags: ["superantigen", "T cell", "cytokine storm"]
+
+  - id: "09_mc_immune_amnesia"
+    type: "multiple_choice"
+    difficulty: "hard"
+    question: "Measles virus causes 'immune amnesia'. What does this mean?"
+    choices:
+      - "A) Patients forget their vaccination history"
+      - "B) The virus destroys existing memory B and T cells, erasing immunity to previously encountered pathogens"
+      - "C) The virus enhances memory formation, making future vaccines more effective"
+      - "D) Patients develop amnesia as a neurological symptom"
+    answer: "B"
+    hint: "Measles attacks the immune system's cache — destroying pre-existing memory cells."
+    explanation: >
+      Measles virus infects and destroys memory B and T cells, effectively
+      erasing the immune system's 'database' of previously encountered
+      pathogens. Studies show that measles can wipe out 20-70% of existing
+      antibody repertoire, leaving patients susceptible to infections they
+      were previously immune to. This 'immune amnesia' lasts for months to
+      years and is a major reason why measles vaccination prevents non-measles
+      deaths as well.
+    tags: ["measles", "immune amnesia", "memory"]
+
+  - id: "09_fill_biofilm"
+    type: "fill_in_the_blank"
+    difficulty: "easy"
+    question: "Some bacteria like Pseudomonas aeruginosa form ____, structured communities encased in a matrix that shields them from immune cells and antibiotics."
+    answer: "biofilms"
+    hint: "These are physical barriers — structured bacterial communities that resist both immune attack and drug treatment."
+    explanation: >
+      Biofilms are structured bacterial communities embedded in a
+      self-produced extracellular matrix of polysaccharides, proteins, and
+      DNA. The matrix acts as a physical barrier against phagocytosis,
+      complement, and antibiotics. Biofilm-associated infections (e.g.,
+      on medical devices, in chronic wounds) are notoriously difficult to
+      treat and represent a major clinical challenge.
+    tags: ["biofilm", "bacterial evasion"]
+
+  - id: "09_matching_pathogen_defence"
+    type: "matching"
+    difficulty: "hard"
+    question: "Match each pathogen class to the primary immune defence deployed against it:"
+    left_items:
+      - "Extracellular bacteria"
+      - "Intracellular bacteria"
+      - "Viruses"
+      - "Helminths (parasitic worms)"
+      - "Fungi"
+    right_items:
+      - "Antibodies, complement, and neutrophils"
+      - "Th1 response activating macrophages"
+      - "CD8+ CTLs, type I interferons, and neutralising antibodies"
+      - "Th2 response with IgE, eosinophils, and mast cells"
+      - "Th17 response recruiting neutrophils via IL-17"
+    answer:
+      "Extracellular bacteria": "Antibodies, complement, and neutrophils"
+      "Intracellular bacteria": "Th1 response activating macrophages"
+      "Viruses": "CD8+ CTLs, type I interferons, and neutralising antibodies"
+      "Helminths (parasitic worms)": "Th2 response with IgE, eosinophils, and mast cells"
+      "Fungi": "Th17 response recruiting neutrophils via IL-17"
+    hint: "Each pathogen class faces a tailored immune strategy: humoral, Th1, CTL, Th2, or Th17."
+    explanation: >
+      The immune system deploys pathogen-appropriate responses. Extracellular
+      bacteria are cleared by antibodies and phagocytes. Intracellular bacteria
+      require macrophage activation via Th1 (IFN-γ). Viruses need CTLs to kill
+      infected cells plus interferons and antibodies. Helminths (too large to
+      phagocytose) trigger Th2/IgE/eosinophil responses. Fungi are handled by
+      Th17-recruited neutrophils. Immunodeficiencies in each pathway cause
+      susceptibility to the corresponding pathogen class.
+    tags: ["pathogen defence", "matching"]
+
+  - id: "09_case_host_pathogen"
+    type: "case_study"
+    difficulty: "medium"
+    question: >
+      You analyse differential gene expression between macrophages infected
+      with Mycobacterium tuberculosis vs uninfected controls. Infected
+      macrophages show downregulation of phagolysosome fusion genes and
+      upregulation of bacterial lipid metabolism genes.
+
+      What evasion strategy is TB using? Why is this particularly effective
+      against the innate immune response?
+    answer:
+      - "phagosome"
+      - "lysosome"
+      - "intracellular"
+      - "survival"
+      - "phagocytosis"
+      - "evasion"
+    hint: "TB prevents the garbage collector from completing its cleanup — the phagosome never fuses with the lysosome."
+    explanation: >
+      Mycobacterium tuberculosis survives inside macrophages by blocking
+      phagosome-lysosome fusion — the critical step where engulfed pathogens
+      are destroyed. The bacterium arrests phagosome maturation, preventing
+      acidification and exposure to lysosomal enzymes. It then reprograms the
+      macrophage's lipid metabolism to create a nutrient-rich intracellular
+      niche. This is particularly effective because macrophages are the primary
+      innate defence against TB, and the bacterium turns its own predator
+      into a safe harbour.
+    tags: ["case study", "tuberculosis", "intracellular survival"]

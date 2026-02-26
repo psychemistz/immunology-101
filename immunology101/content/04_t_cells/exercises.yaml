@@ -130,3 +130,114 @@ exercises:
       the context of MHC I — without presentation, the mutation is invisible
       to the cytotoxic immune response, regardless of its oncogenic importance.
     tags: ["case study", "neoantigen", "HLA", "MHC"]
+
+  - id: "04_mc_tcr_vs_bcr"
+    type: "multiple_choice"
+    difficulty: "medium"
+    question: "Which is a key difference between the T cell receptor (TCR) and B cell receptor (BCR)?"
+    choices:
+      - "A) TCRs can be secreted as soluble molecules; BCRs cannot"
+      - "B) TCRs undergo somatic hypermutation; BCRs do not"
+      - "C) TCRs are always membrane-bound and recognise peptide+MHC; BCRs can be secreted as antibodies"
+      - "D) TCRs only use V and J segments; BCRs use V, D, and J"
+    answer: "C"
+    hint: "TCRs check both payload (peptide) AND source address (MHC) — like an ACL rule."
+    explanation: >
+      Unlike BCRs/antibodies, TCRs are never secreted — they are always
+      membrane-bound. TCRs recognise peptide in the context of MHC (MHC
+      restriction), while antibodies can bind free-floating antigens directly.
+      Additionally, TCRs do not undergo somatic hypermutation, so their
+      affinity is fixed after thymic selection.
+    tags: ["TCR", "BCR", "comparison"]
+
+  - id: "04_mc_positive_selection"
+    type: "multiple_choice"
+    difficulty: "hard"
+    question: "A double-positive thymocyte fails positive selection. What is the most likely reason and outcome?"
+    choices:
+      - "A) Its TCR bound self-MHC too strongly; the cell becomes a Treg"
+      - "B) Its TCR could not bind self-MHC at all; the cell dies by neglect"
+      - "C) Its TCR recognised a pathogen; the cell is exported immediately"
+      - "D) Its TCR was already secreted as an antibody; the cell is redundant"
+    answer: "B"
+    hint: "Positive selection tests whether the TCR can even interact with the MHC system — like an integration test."
+    explanation: >
+      Positive selection requires that the TCR bind self-MHC with moderate
+      affinity — proving it can 'see' the MHC system. Thymocytes whose
+      TCRs fail to bind self-MHC receive no survival signals and die by
+      neglect (apoptosis). This eliminates useless receptors. Cells that
+      bind too strongly are eliminated by negative selection instead.
+    tags: ["positive selection", "thymus", "development"]
+
+  - id: "04_fill_thymus"
+    type: "fill_in_the_blank"
+    difficulty: "easy"
+    question: "T cells develop in the ____, an organ in the chest where they undergo selection to ensure self-tolerance and MHC restriction."
+    answer: "thymus"
+    hint: "The 'T' in T cell comes from this organ — a CI/CD pipeline where most builds fail."
+    explanation: >
+      The thymus is the primary lymphoid organ for T cell development. About
+      95% of developing thymocytes die during selection. Positive selection
+      ensures MHC restriction, and negative selection removes self-reactive
+      cells. The thymus involutes (shrinks) with age, contributing to
+      immunosenescence.
+    tags: ["thymus", "development"]
+
+  - id: "04_matching_development_stages"
+    type: "matching"
+    difficulty: "hard"
+    question: "Match each T cell development stage to the key event that occurs:"
+    left_items:
+      - "Double-negative (DN)"
+      - "Double-positive (DP)"
+      - "Positive selection"
+      - "Negative selection"
+      - "Single-positive (SP)"
+    right_items:
+      - "TCR β chain gene rearrangement begins"
+      - "Both CD4 and CD8 expressed; TCR α chain rearranged"
+      - "TCR must bind self-MHC with moderate affinity to survive"
+      - "TCR must NOT bind self-peptide/MHC too strongly"
+      - "Cell commits to CD4+ or CD8+ lineage and exits thymus"
+    answer:
+      "Double-negative (DN)": "TCR β chain gene rearrangement begins"
+      "Double-positive (DP)": "Both CD4 and CD8 expressed; TCR α chain rearranged"
+      "Positive selection": "TCR must bind self-MHC with moderate affinity to survive"
+      "Negative selection": "TCR must NOT bind self-peptide/MHC too strongly"
+      "Single-positive (SP)": "Cell commits to CD4+ or CD8+ lineage and exits thymus"
+    hint: "Follow the pipeline: build (DN) → test compatibility (DP) → integration test → security audit → deploy."
+    explanation: >
+      T cell development proceeds through defined stages: DN (TCRβ rearrangement)
+      → DP (TCRα rearrangement, both co-receptors) → positive selection (MHC
+      compatibility check in cortex) → negative selection (self-reactivity
+      check in medulla) → SP (lineage commitment to CD4 or CD8, export to
+      periphery). Each stage filters the repertoire further.
+    tags: ["development", "thymus", "matching"]
+
+  - id: "04_case_subset_clustering"
+    type: "case_study"
+    difficulty: "medium"
+    question: >
+      You analyse scRNA-seq data from a lymph node and identify four distinct
+      T cell clusters after subsetting on CD3E+ cells. Cluster A expresses
+      CD4, TBX21, and IFNG. Cluster B expresses CD4, GATA3, and IL4. Cluster C
+      expresses CD4, FOXP3, and IL2RA. Cluster D expresses CD4 and IL21.
+
+      Identify each cluster's T helper subset and explain what each one does.
+    answer:
+      - "Th1"
+      - "Th2"
+      - "Treg"
+      - "Tfh"
+      - "IFN-gamma"
+      - "IL-4"
+      - "FOXP3"
+    hint: "TBX21 = T-bet (master TF for Th1). GATA3 = Th2. FOXP3 = Treg. IL-21 = Tfh."
+    explanation: >
+      Cluster A (TBX21, IFNG) = Th1 cells, which activate macrophages against
+      intracellular pathogens. Cluster B (GATA3, IL4) = Th2 cells, which drive
+      anti-parasite and allergic responses. Cluster C (FOXP3, IL2RA) = Tregs,
+      which suppress excessive immune responses. Cluster D (IL21) = Tfh cells,
+      which provide help to B cells in germinal centres. Each subset is defined
+      by its master transcription factor and cytokine profile.
+    tags: ["case study", "scRNA-seq", "Th subsets"]

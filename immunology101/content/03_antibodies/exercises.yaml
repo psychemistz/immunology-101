@@ -130,3 +130,111 @@ exercises:
       This convergence is exploited in vaccine design and therapeutic antibody
       development.
     tags: ["case study", "BCR-seq", "clonal expansion", "SHM"]
+
+  - id: "03_mc_csr"
+    type: "multiple_choice"
+    difficulty: "medium"
+    question: "During class-switch recombination, what changes about the antibody?"
+    choices:
+      - "A) The antigen-binding specificity (Fab region)"
+      - "B) The constant region (Fc) determining the isotype and effector function"
+      - "C) Both the Fab and Fc regions change simultaneously"
+      - "D) The antibody loses all binding capacity"
+    answer: "B"
+    hint: "Switching the output format (Fc) while keeping the query logic (Fab) the same."
+    explanation: >
+      Class-switch recombination (CSR) changes the heavy chain constant region
+      (e.g., from IgM to IgG) without altering the variable region that
+      determines antigen specificity. This allows the same antigen-binding
+      specificity to be paired with different effector functions: IgG for
+      opsonisation, IgA for mucosal defence, IgE for anti-parasite responses.
+    tags: ["CSR", "class switch", "isotype"]
+
+  - id: "03_mc_diversity"
+    type: "multiple_choice"
+    difficulty: "hard"
+    question: "A researcher finds that two B cell clones use the same V, D, and J gene segments but produce antibodies with different CDR3 sequences. Which mechanism best explains this?"
+    choices:
+      - "A) Class-switch recombination"
+      - "B) Somatic hypermutation in the Fc region"
+      - "C) Junctional diversity — random nucleotide additions and deletions at join sites"
+      - "D) Different MHC restriction"
+    answer: "C"
+    hint: "Even with the same gene segments, the joining process adds randomness — like random noise at array boundaries."
+    explanation: >
+      Junctional diversity arises from random nucleotide additions (by TdT
+      enzyme) and deletions at the V-D and D-J junctions during recombination.
+      Even when the same V, D, and J segments are selected, different junction
+      processing creates unique CDR3 sequences — the most variable part of
+      the antibody and the primary determinant of antigen specificity.
+    tags: ["junctional diversity", "CDR3", "V(D)J"]
+
+  - id: "03_fill_bone_marrow"
+    type: "fill_in_the_blank"
+    difficulty: "easy"
+    question: "B cells develop and undergo V(D)J recombination in the bone ____, where self-reactive cells are eliminated before reaching the periphery."
+    answer: "marrow"
+    hint: "The 'B' in B cell comes from this organ — where they are 'born'."
+    explanation: >
+      B cells develop in the bone marrow, where they undergo V(D)J
+      recombination to generate unique B cell receptors. Self-reactive B cells
+      are eliminated through clonal deletion or receptor editing before they
+      mature and exit to the periphery.
+    tags: ["B cell", "development", "bone marrow"]
+
+  - id: "03_matching_diversity_mechanisms"
+    type: "matching"
+    difficulty: "hard"
+    question: "Match each antibody diversity mechanism to its description:"
+    left_items:
+      - "V(D)J recombination"
+      - "Junctional diversity"
+      - "Somatic hypermutation"
+      - "Class-switch recombination"
+    right_items:
+      - "Combinatorial joining of gene segments — generates initial repertoire"
+      - "Random nucleotide additions/deletions at join sites — CDR3 variation"
+      - "Point mutations in V regions during GC reactions — affinity tuning"
+      - "Changing the Fc constant region — new effector functions, same specificity"
+    answer:
+      "V(D)J recombination": "Combinatorial joining of gene segments — generates initial repertoire"
+      "Junctional diversity": "Random nucleotide additions/deletions at join sites — CDR3 variation"
+      "Somatic hypermutation": "Point mutations in V regions during GC reactions — affinity tuning"
+      "Class-switch recombination": "Changing the Fc constant region — new effector functions, same specificity"
+    hint: "V(D)J = initial diversity; junctional = CDR3; SHM = affinity; CSR = isotype."
+    explanation: >
+      These four mechanisms act at different stages: V(D)J recombination creates
+      the initial diverse repertoire during development. Junctional diversity
+      adds variability at gene segment junctions. SHM fine-tunes affinity in
+      germinal centres. CSR changes the antibody class for appropriate effector
+      function. Together they generate ~10^11 unique specificities.
+    tags: ["diversity", "matching"]
+
+  - id: "03_case_therapeutic_ab"
+    type: "case_study"
+    difficulty: "medium"
+    question: >
+      A biotech company is developing a therapeutic monoclonal antibody against
+      a viral surface protein. They use phage display to select high-affinity
+      binders, then humanise the antibody to reduce immunogenicity. The final
+      product is an IgG1 isotype.
+
+      Why was IgG1 chosen as the isotype? What advantage does humanisation
+      provide over using the original mouse antibody?
+    answer:
+      - "effector function"
+      - "Fc"
+      - "opsonisation"
+      - "half-life"
+      - "immunogenicity"
+      - "human"
+    hint: "IgG1 has strong Fc-mediated effector functions. Mouse antibodies trigger human anti-mouse antibody responses."
+    explanation: >
+      IgG1 was chosen because its Fc region mediates strong effector functions
+      including antibody-dependent cellular cytotoxicity (ADCC), complement
+      activation, and opsonisation. It also has the longest serum half-life
+      (~21 days) due to FcRn recycling. Humanisation replaces mouse framework
+      regions with human sequences while preserving the antigen-binding CDRs,
+      reducing the risk of patients developing anti-drug antibodies (immunogenicity)
+      that would neutralise the therapeutic.
+    tags: ["case study", "therapeutic antibody", "IgG"]

@@ -134,3 +134,118 @@ exercises:
       individuals with weak innate signatures might benefit from stronger
       adjuvants, booster doses, or alternative vaccine platforms.
     tags: ["case study", "systems vaccinology", "transcriptomics"]
+
+  - id: "07_mc_live_vs_inactivated"
+    type: "multiple_choice"
+    difficulty: "medium"
+    question: "Why do live attenuated vaccines generally produce stronger immunity than inactivated vaccines?"
+    choices:
+      - "A) They contain more adjuvant"
+      - "B) They replicate in the host, mimicking natural infection and activating both cellular and humoral immunity"
+      - "C) They use mRNA technology"
+      - "D) They only activate B cells, which is more effective"
+    answer: "B"
+    hint: "Live vaccines mimic the real infection (sandboxed malware) — triggering the full immune response."
+    explanation: >
+      Live attenuated vaccines contain weakened pathogens that replicate at
+      low levels, stimulating both innate and adaptive immunity including
+      strong CD8+ T cell responses. They activate the full immune cascade
+      (MHC I and II presentation) and generate robust memory. Inactivated
+      vaccines cannot replicate and primarily stimulate antibody responses,
+      often requiring adjuvants and booster doses.
+    tags: ["vaccine type", "live attenuated"]
+
+  - id: "07_mc_correlate"
+    type: "multiple_choice"
+    difficulty: "hard"
+    question: "A vaccine trial measures neutralising antibody titres as a correlate of protection. Which statement is most accurate?"
+    choices:
+      - "A) All vaccinated individuals with detectable antibodies are fully protected"
+      - "B) A correlate of protection is a measurable immune parameter that statistically predicts protection, but does not guarantee it for every individual"
+      - "C) Antibody titres are the only possible correlate of protection"
+      - "D) Correlates of protection are identical across all pathogens"
+    answer: "B"
+    hint: "Correlates are predictive biomarkers — statistical associations, not absolute guarantees."
+    explanation: >
+      A correlate of protection is a measurable immune marker (e.g., antibody
+      titre, T cell frequency) that predicts whether a vaccinated individual
+      is protected. It is a statistical association, not an absolute guarantee.
+      Different pathogens may have different correlates: antibodies for
+      influenza, CD4+ T cells for HIV. Establishing reliable correlates is
+      a major challenge in vaccinology and enables faster vaccine evaluation.
+    tags: ["correlate of protection", "vaccine"]
+
+  - id: "07_fill_plasma"
+    type: "fill_in_the_blank"
+    difficulty: "easy"
+    question: "Long-lived ____ cells reside in the bone marrow and continuously secrete antibodies for decades without needing re-stimulation."
+    answer: "plasma"
+    hint: "These cells are antibody factories — dedicated to constant antibody output."
+    explanation: >
+      Long-lived plasma cells are the endpoint of B cell differentiation.
+      They migrate to the bone marrow where they can survive for decades,
+      continuously secreting antibodies that maintain baseline serum levels
+      (serological memory). This is why antibody titres can persist long
+      after vaccination, even without re-exposure to the antigen.
+    tags: ["plasma cell", "memory"]
+
+  - id: "07_matching_vaccine_types"
+    type: "matching"
+    difficulty: "hard"
+    question: "Match each vaccine technology to its example and mechanism:"
+    left_items:
+      - "Live attenuated"
+      - "mRNA"
+      - "Viral vector"
+      - "Subunit/protein"
+      - "Toxoid"
+    right_items:
+      - "MMR — weakened pathogen replicates mildly to mimic infection"
+      - "Pfizer COVID-19 — delivers mRNA in lipid nanoparticles; host builds the antigen"
+      - "AstraZeneca COVID-19 — harmless virus delivers antigen gene"
+      - "Hepatitis B — purified antigen protein plus adjuvant"
+      - "Tetanus — inactivated toxin trains immunity against the toxin itself"
+    answer:
+      "Live attenuated": "MMR — weakened pathogen replicates mildly to mimic infection"
+      "mRNA": "Pfizer COVID-19 — delivers mRNA in lipid nanoparticles; host builds the antigen"
+      "Viral vector": "AstraZeneca COVID-19 — harmless virus delivers antigen gene"
+      "Subunit/protein": "Hepatitis B — purified antigen protein plus adjuvant"
+      "Toxoid": "Tetanus — inactivated toxin trains immunity against the toxin itself"
+    hint: "Each platform has a different delivery strategy: live pathogen, nucleic acid, vector, protein, or toxin."
+    explanation: >
+      Vaccine technologies range from traditional (live attenuated, toxoid) to
+      modern (mRNA, viral vector). Live attenuated vaccines (MMR) elicit the
+      strongest responses. mRNA vaccines deliver genetic instructions in lipid
+      nanoparticles. Viral vectors use a harmless virus as delivery vehicle.
+      Subunit vaccines provide purified protein. Toxoids use inactivated toxins.
+      Each has trade-offs in immunogenicity, safety, and manufacturing.
+    tags: ["vaccine types", "matching"]
+
+  - id: "07_case_epitope_prediction"
+    type: "case_study"
+    difficulty: "medium"
+    question: >
+      You are designing a peptide vaccine against a new respiratory virus. Using
+      IEDB tools and NetMHCpan, you predict which viral peptides bind common HLA
+      alleles. You select 10 peptides with strong predicted binding across
+      HLA-A*02:01, HLA-A*24:02, and HLA-B*07:02.
+
+      Why is it important to select peptides that bind multiple common HLA
+      alleles? What limitation does this approach have?
+    answer:
+      - "HLA"
+      - "polymorphism"
+      - "population coverage"
+      - "MHC"
+      - "diversity"
+      - "binding"
+    hint: "HLA molecules are highly polymorphic — different people have different alleles and present different peptides."
+    explanation: >
+      HLA genes are the most polymorphic in the human genome. A peptide that
+      binds HLA-A*02:01 may not bind HLA-A*24:02. Selecting peptides that cover
+      multiple common alleles maximises population coverage — ensuring most
+      individuals can present at least some vaccine peptides. The limitation is
+      that even 'common' alleles vary dramatically across ethnicities, and
+      predicted binding does not guarantee immunogenicity (the peptide must
+      also be processed, presented, and recognised by existing T cell repertoires).
+    tags: ["case study", "epitope prediction", "HLA"]

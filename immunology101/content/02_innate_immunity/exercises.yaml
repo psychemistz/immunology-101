@@ -123,3 +123,115 @@ exercises:
       viruses (including SARS-CoV-2) encode proteins that antagonise interferon
       signalling to delay this response, buying time for replication.
     tags: ["case study", "interferon", "ISG", "RNA-seq"]
+
+  - id: "02_mc_damp"
+    type: "multiple_choice"
+    difficulty: "medium"
+    question: "What distinguishes DAMPs from PAMPs?"
+    choices:
+      - "A) DAMPs are foreign molecules from pathogens; PAMPs are host-derived"
+      - "B) DAMPs are host-derived danger signals released from damaged cells; PAMPs are pathogen-derived"
+      - "C) DAMPs activate adaptive immunity; PAMPs activate innate immunity"
+      - "D) There is no difference — they are the same thing"
+    answer: "B"
+    hint: "DAMP = Damage-Associated Molecular Pattern. These are 'self' molecules released when cells are injured."
+    explanation: >
+      DAMPs (damage-associated molecular patterns) are endogenous molecules
+      released from damaged or dying host cells (e.g., ATP, HMGB1, uric acid).
+      PAMPs (pathogen-associated molecular patterns) are conserved microbial
+      structures (e.g., LPS, flagellin). Both activate innate immunity via
+      PRRs, but DAMPs signal sterile tissue damage while PAMPs signal infection.
+    tags: ["DAMP", "PAMP", "innate"]
+
+  - id: "02_mc_barrier"
+    type: "multiple_choice"
+    difficulty: "hard"
+    question: "A patient with a deficiency in antimicrobial peptides (defensins) produced by epithelial cells would most likely experience:"
+    choices:
+      - "A) Impaired antibody production"
+      - "B) Increased susceptibility to mucosal and skin infections"
+      - "C) Failure of V(D)J recombination"
+      - "D) Loss of immunological memory"
+    answer: "B"
+    hint: "Defensins are part of the physical/chemical barrier — the DMZ/input sanitisation layer."
+    explanation: >
+      Defensins are antimicrobial peptides produced by epithelial cells at
+      barrier surfaces (skin, gut, lung). They directly kill microbes by
+      disrupting their membranes. Deficiency compromises the first line of
+      defence, leading to increased infections at mucosal and skin surfaces
+      while leaving adaptive immunity (antibodies, memory) intact.
+    tags: ["barrier", "defensins", "innate"]
+
+  - id: "02_fill_phagocytosis"
+    type: "fill_in_the_blank"
+    difficulty: "easy"
+    question: "Neutrophils and macrophages engulf and destroy pathogens through a process called ____."
+    answer: "phagocytosis"
+    hint: "From Greek: phago (eat) + cyte (cell). The immune system's garbage collector."
+    explanation: >
+      Phagocytosis is the process by which innate immune cells (primarily
+      neutrophils and macrophages) engulf pathogens into a phagosome, which
+      fuses with a lysosome to form a phagolysosome. Inside, the pathogen
+      is destroyed by reactive oxygen species, enzymes, and acidic pH.
+    tags: ["phagocytosis", "innate"]
+
+  - id: "02_matching_effector_mechanisms"
+    type: "matching"
+    difficulty: "hard"
+    question: "Match each innate effector mechanism to its primary outcome:"
+    left_items:
+      - "Phagocytosis"
+      - "Membrane attack complex (MAC)"
+      - "Type I interferons (IFN-α/β)"
+      - "Inflammation (TNF-α, IL-1, IL-6)"
+      - "Opsonisation (C3b)"
+    right_items:
+      - "Engulfment and intracellular destruction of pathogen"
+      - "Direct lysis by forming pores in pathogen membrane"
+      - "Antiviral state in neighbouring cells; upregulation of MHC I"
+      - "Vasodilation, immune cell recruitment, and fever"
+      - "Tagging pathogens to enhance phagocyte recognition"
+    answer:
+      "Phagocytosis": "Engulfment and intracellular destruction of pathogen"
+      "Membrane attack complex (MAC)": "Direct lysis by forming pores in pathogen membrane"
+      "Type I interferons (IFN-α/β)": "Antiviral state in neighbouring cells; upregulation of MHC I"
+      "Inflammation (TNF-α, IL-1, IL-6)": "Vasodilation, immune cell recruitment, and fever"
+      "Opsonisation (C3b)": "Tagging pathogens to enhance phagocyte recognition"
+    hint: "Each mechanism has a distinct outcome: eat, lyse, warn, recruit, or tag."
+    explanation: >
+      Innate immunity deploys multiple complementary effector mechanisms.
+      Phagocytosis directly consumes pathogens. The MAC punches holes for lysis.
+      Interferons broadcast antiviral warnings. Inflammatory cytokines recruit
+      reinforcements. Opsonisation tags targets for more efficient phagocytosis.
+      Together, these provide layered defence before adaptive immunity activates.
+    tags: ["effector", "innate", "matching"]
+
+  - id: "02_case_tlr_gwas"
+    type: "case_study"
+    difficulty: "medium"
+    question: >
+      A GWAS study identifies a TLR4 polymorphism (Asp299Gly) that is
+      associated with increased susceptibility to Gram-negative sepsis.
+      Functional studies show this variant reduces TLR4 signalling in response
+      to LPS stimulation.
+
+      Why would reduced TLR4 function increase susceptibility to Gram-negative
+      bacteria specifically?
+    answer:
+      - "LPS"
+      - "Gram-negative"
+      - "innate"
+      - "recognition"
+      - "PRR"
+      - "signalling"
+    hint: "TLR4 is the primary receptor for LPS — a major component of Gram-negative bacterial cell walls."
+    explanation: >
+      TLR4 is the primary PRR for lipopolysaccharide (LPS), a component
+      of Gram-negative bacterial outer membranes. Reduced TLR4 signalling
+      impairs the innate immune response to Gram-negative bacteria: delayed
+      cytokine production, reduced neutrophil recruitment, and weakened
+      inflammatory response. This allows Gram-negative bacteria to proliferate
+      before the immune system mounts an effective defence, increasing
+      sepsis risk. Gram-positive bacteria use different PAMPs (e.g.,
+      lipoteichoic acid recognised by TLR2) and are less affected.
+    tags: ["case study", "TLR4", "GWAS", "polymorphism"]
