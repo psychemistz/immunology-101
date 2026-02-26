@@ -1,0 +1,125 @@
+exercises:
+  - id: "02_mc_prr"
+    type: "multiple_choice"
+    difficulty: "easy"
+    question: "What do pattern recognition receptors (PRRs) detect?"
+    choices:
+      - "A) Specific antigens unique to each pathogen"
+      - "B) Conserved molecular patterns shared by classes of microbes (PAMPs)"
+      - "C) Antibodies produced by B cells"
+      - "D) MHC molecules on host cells"
+    answer: "B"
+    hint: "Think firewall rules — they match broad patterns, not individual IPs."
+    explanation: >
+      PRRs recognise pathogen-associated molecular patterns (PAMPs) — conserved
+      structures like LPS, flagellin, and viral dsRNA. This is pattern-based
+      detection, not the antigen-specific recognition of adaptive immunity.
+    tags: ["PRR", "PAMP", "innate"]
+
+  - id: "02_mc_complement"
+    type: "multiple_choice"
+    difficulty: "easy"
+    question: "Which of the following is NOT a function of the complement system?"
+    choices:
+      - "A) Opsonisation of pathogens"
+      - "B) Recruitment of immune cells via anaphylatoxins"
+      - "C) V(D)J recombination of receptor genes"
+      - "D) Direct lysis via the membrane attack complex"
+    answer: "C"
+    hint: "V(D)J recombination is an adaptive immunity mechanism."
+    explanation: >
+      The complement system opsonises pathogens, recruits cells, and lyses
+      microbes. V(D)J recombination is the gene rearrangement process that
+      generates diverse B cell and T cell receptors — part of adaptive immunity.
+    tags: ["complement", "innate"]
+
+  - id: "02_matching_prr_ligands"
+    type: "matching"
+    difficulty: "medium"
+    question: "Match each PRR family to its typical ligand:"
+    left_items:
+      - "TLR4"
+      - "TLR3"
+      - "NOD-like receptors"
+      - "RIG-I"
+    right_items:
+      - "Bacterial LPS"
+      - "Double-stranded RNA"
+      - "Peptidoglycan fragments"
+      - "Cytoplasmic viral RNA"
+    answer:
+      "TLR4": "Bacterial LPS"
+      "TLR3": "Double-stranded RNA"
+      "NOD-like receptors": "Peptidoglycan fragments"
+      "RIG-I": "Cytoplasmic viral RNA"
+    hint: "TLR4 is the classic endotoxin receptor; TLR3 sits in endosomes sensing dsRNA."
+    explanation: >
+      TLR4 recognises lipopolysaccharide (LPS) on Gram-negative bacteria.
+      TLR3 detects dsRNA in endosomes. NLRs sense intracellular peptidoglycan
+      fragments. RIG-I detects viral RNA with 5'-triphosphate in the cytoplasm.
+    tags: ["PRR", "TLR", "matching"]
+
+  - id: "02_fill_inflammasome"
+    type: "fill_in_the_blank"
+    difficulty: "medium"
+    question: "The ____ inflammasome is the best-characterised NLR complex and activates caspase-1 to process pro-inflammatory cytokines."
+    answer: "NLRP3"
+    hint: "This three-letter-plus-number name is the most studied inflammasome sensor."
+    explanation: >
+      The NLRP3 inflammasome is the most extensively studied. Upon activation
+      by diverse danger signals, it assembles with ASC and caspase-1 to process
+      pro-IL-1β and pro-IL-18 into their active, secreted forms.
+    tags: ["inflammasome", "NLRP3", "innate"]
+
+  - id: "02_ordering_complement"
+    type: "ordering"
+    difficulty: "medium"
+    question: "Arrange these complement activation events in the correct order:"
+    choices:
+      - "Pathogen surface is recognised (e.g., by C3b or antibody)"
+      - "C3 convertase cleaves C3 into C3a and C3b"
+      - "C3b opsonises the pathogen surface"
+      - "C5 convertase cleaves C5 into C5a and C5b"
+      - "C5b–C9 assemble the membrane attack complex (MAC)"
+      - "MAC forms pores and lyses the pathogen"
+    answer:
+      - "Pathogen surface is recognised (e.g., by C3b or antibody)"
+      - "C3 convertase cleaves C3 into C3a and C3b"
+      - "C3b opsonises the pathogen surface"
+      - "C5 convertase cleaves C5 into C5a and C5b"
+      - "C5b–C9 assemble the membrane attack complex (MAC)"
+      - "MAC forms pores and lyses the pathogen"
+    hint: "Start with recognition, end with lysis — it's a cascade (pipeline)."
+    explanation: >
+      The complement cascade proceeds: recognition → C3 cleavage → opsonisation
+      → C5 cleavage → MAC assembly → target lysis. Each step amplifies the
+      signal, like a data processing pipeline where each stage produces more
+      output than its input.
+    tags: ["complement", "ordering"]
+
+  - id: "02_case_isg"
+    type: "case_study"
+    difficulty: "hard"
+    question: >
+      You perform differential expression analysis on bulk RNA-seq from
+      SARS-CoV-2-infected lung tissue vs healthy controls. The top upregulated
+      pathway is "Type I interferon signalling" with genes like MX1, OAS1,
+      ISG15, and IFIT1 highly expressed.
+
+      What arm of immunity do these genes represent? Why would a virus benefit
+      from suppressing this pathway?
+    answer:
+      - "innate"
+      - "interferon"
+      - "antiviral"
+      - "ISG"
+      - "interferon-stimulated"
+      - "viral replication"
+    hint: "Type I interferons (IFN-α/β) are the innate antiviral broadcast system."
+    explanation: >
+      MX1, OAS1, ISG15, and IFIT1 are interferon-stimulated genes (ISGs) — key
+      effectors of the innate antiviral response. Type I interferons induce an
+      antiviral state in neighbouring cells, blocking viral replication. Many
+      viruses (including SARS-CoV-2) encode proteins that antagonise interferon
+      signalling to delay this response, buying time for replication.
+    tags: ["case study", "interferon", "ISG", "RNA-seq"]

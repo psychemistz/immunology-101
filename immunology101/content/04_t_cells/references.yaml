@@ -1,0 +1,24 @@
+references:
+  - title: "Anatomy and Physiology 2e — Chapter 21: T Cell-Mediated Immunity"
+    url: "https://openstax.org/books/anatomy-and-physiology-2e/pages/21-3-the-adaptive-immune-response-t-lymphocytes-and-their-functional-types"
+    source: "OpenStax"
+    license: "CC BY 4.0"
+    notes: "Undergraduate-level T cell biology and cell-mediated immunity."
+
+  - title: "Janeway's Immunobiology — T Cell-Mediated Immunity"
+    url: "https://www.ncbi.nlm.nih.gov/books/NBK27101/"
+    source: "NCBI Bookshelf"
+    license: "CC BY 4.0"
+    notes: "Detailed coverage of T cell development, activation, and effector mechanisms."
+
+  - title: "NetMHCpan — Peptide-MHC Binding Prediction"
+    url: "https://services.healthtech.dtu.dk/services/NetMHCpan-4.1/"
+    source: "DTU Health Tech"
+    license: "Free for academic use"
+    notes: "State-of-the-art tool for MHC class I peptide binding prediction."
+
+  - title: "AIRR Community Standards for TCR Repertoire Analysis"
+    url: "https://docs.airr-community.org/"
+    source: "AIRR Community"
+    license: "CC BY 4.0"
+    notes: "Standards for TCR-seq data representation and sharing."

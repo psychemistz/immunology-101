@@ -1,0 +1,133 @@
+exercises:
+  - id: "05_mc_pleiotropy"
+    type: "multiple_choice"
+    difficulty: "easy"
+    question: "What does it mean that cytokines are 'pleiotropic'?"
+    choices:
+      - "A) They can only act on one cell type"
+      - "B) One cytokine can have different effects on different cell types"
+      - "C) They are only produced by T cells"
+      - "D) They always promote inflammation"
+    answer: "B"
+    hint: "Think polymorphic function — same input, different output depending on context."
+    explanation: >
+      Pleiotropy means a single cytokine can have different effects depending
+      on the target cell type and context. For example, IL-6 promotes Th17
+      differentiation, stimulates acute-phase protein production by hepatocytes,
+      and can act as both pro- and anti-inflammatory depending on signalling mode.
+    tags: ["cytokine", "pleiotropy"]
+
+  - id: "05_mc_chemokine"
+    type: "multiple_choice"
+    difficulty: "easy"
+    question: "What is the primary function of chemokines?"
+    choices:
+      - "A) Killing pathogens directly"
+      - "B) Directing immune cell migration along concentration gradients"
+      - "C) Producing antibodies"
+      - "D) Activating the complement cascade"
+    answer: "B"
+    hint: "Chemo- means chemical; -kine means movement. Like routing protocols."
+    explanation: >
+      Chemokines are chemotactic cytokines that create concentration gradients,
+      guiding immune cells to sites of infection or inflammation. For example,
+      CXCL8 (IL-8) recruits neutrophils, and CCL2 recruits monocytes.
+    tags: ["chemokine", "migration"]
+
+  - id: "05_matching_cytokine_function"
+    type: "matching"
+    difficulty: "medium"
+    question: "Match each cytokine to its primary function:"
+    left_items:
+      - "IL-2"
+      - "IL-10"
+      - "IFN-γ"
+      - "TNF-α"
+    right_items:
+      - "T cell proliferation and survival"
+      - "Immune suppression (anti-inflammatory)"
+      - "Macrophage activation (Th1 response)"
+      - "Pro-inflammatory; endothelial activation"
+    answer:
+      "IL-2": "T cell proliferation and survival"
+      "IL-10": "Immune suppression (anti-inflammatory)"
+      "IFN-γ": "Macrophage activation (Th1 response)"
+      "TNF-α": "Pro-inflammatory; endothelial activation"
+    hint: "IL-2 is the T cell growth factor, IL-10 suppresses, IFN-γ is THE Th1 cytokine."
+    explanation: >
+      IL-2 drives T cell clonal expansion. IL-10 is a key anti-inflammatory
+      cytokine produced by Tregs and other cells. IFN-γ (type II interferon)
+      is the signature Th1 cytokine that activates macrophages. TNF-α is a
+      potent pro-inflammatory mediator.
+    tags: ["cytokine", "matching"]
+
+  - id: "05_fill_jakstat"
+    type: "fill_in_the_blank"
+    difficulty: "medium"
+    question: "Most interleukin and interferon receptors signal through the ____-STAT pathway, where kinases phosphorylate transcription factors."
+    answer: "JAK"
+    hint: "These kinases are 'Janus' kinases — named after the two-faced Roman god."
+    explanation: >
+      The JAK-STAT (Janus kinase – Signal Transducer and Activator of
+      Transcription) pathway is the primary signalling route for most
+      cytokine receptors. Ligand binding activates JAKs, which phosphorylate
+      STATs. Phosphorylated STATs dimerise and translocate to the nucleus
+      to activate gene transcription.
+    tags: ["JAK-STAT", "signalling"]
+
+  - id: "05_ordering_signalling"
+    type: "ordering"
+    difficulty: "medium"
+    question: "Arrange the steps of cytokine signalling via the JAK-STAT pathway in order:"
+    choices:
+      - "Cytokine binds its receptor on the target cell surface"
+      - "Receptor-associated JAK kinases are activated"
+      - "JAKs phosphorylate tyrosine residues on the receptor"
+      - "STAT proteins dock on phosphorylated receptor and are phosphorylated by JAKs"
+      - "Phosphorylated STATs dimerise"
+      - "STAT dimers translocate to the nucleus and activate gene transcription"
+    answer:
+      - "Cytokine binds its receptor on the target cell surface"
+      - "Receptor-associated JAK kinases are activated"
+      - "JAKs phosphorylate tyrosine residues on the receptor"
+      - "STAT proteins dock on phosphorylated receptor and are phosphorylated by JAKs"
+      - "Phosphorylated STATs dimerise"
+      - "STAT dimers translocate to the nucleus and activate gene transcription"
+    hint: "Binding → kinase activation → phosphorylation cascade → nuclear translocation."
+    explanation: >
+      The JAK-STAT pathway is a direct signalling route: cytokine binding
+      activates JAKs → receptor phosphorylation → STAT recruitment and
+      phosphorylation → STAT dimerisation → nuclear translocation → gene
+      activation. This simplicity enables rapid transcriptional responses.
+    tags: ["JAK-STAT", "ordering"]
+
+  - id: "05_case_cellchat"
+    type: "case_study"
+    difficulty: "hard"
+    question: >
+      You run CellChat on scRNA-seq data from a rheumatoid arthritis synovial
+      biopsy. The analysis reveals strong TNF-α signalling from macrophages to
+      fibroblasts, and elevated IL-6 signalling in an autocrine loop on
+      fibroblasts.
+
+      What does this signalling pattern suggest about disease pathology? Name
+      one class of approved drug that targets these specific pathways.
+    answer:
+      - "inflammation"
+      - "pro-inflammatory"
+      - "TNF"
+      - "anti-TNF"
+      - "IL-6"
+      - "JAK inhibitor"
+      - "tocilizumab"
+      - "adalimumab"
+    hint: "TNF-α and IL-6 are major pro-inflammatory cytokines. Biologics that block them are standard RA treatments."
+    explanation: >
+      TNF-α signalling from macrophages to fibroblasts drives chronic
+      inflammation and joint destruction in RA. Autocrine IL-6 on fibroblasts
+      perpetuates inflammatory gene expression. Anti-TNF biologics (e.g.,
+      adalimumab, infliximab) and IL-6 receptor blockers (tocilizumab) are
+      frontline RA therapies. JAK inhibitors (tofacitinib) also target
+      downstream IL-6 signalling. This case shows how scRNA-seq + ligand-
+      receptor analysis can validate therapeutic targets.
+    tags: ["case study", "CellChat", "TNF", "IL-6", "RA"]

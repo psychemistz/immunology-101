@@ -1,0 +1,24 @@
+references:
+  - title: "Best Practices for Single-Cell Analysis Across Modalities"
+    url: "https://www.nature.com/articles/s41576-023-00586-w"
+    source: "Nature Reviews Genetics"
+    license: "CC BY 4.0"
+    notes: "Comprehensive best practices for scRNA-seq and multi-modal single-cell analysis."
+
+  - title: "The Immune Epitope Database (IEDB)"
+    url: "https://www.iedb.org/"
+    source: "IEDB / NIAID"
+    license: "Public domain"
+    notes: "Central resource for immune epitope data and prediction tools."
+
+  - title: "ImmPort: Immunology Database and Analysis Portal"
+    url: "https://www.immport.org/"
+    source: "NIAID / ImmPort"
+    license: "Public domain"
+    notes: "Repository for shared immunology research data from NIAID-funded studies."
+
+  - title: "Squidpy: Spatial Single-Cell Analysis in Python"
+    url: "https://squidpy.readthedocs.io/"
+    source: "Theis Lab"
+    license: "BSD-3"
+    notes: "Framework for spatial transcriptomics analysis including neighbourhood enrichment."

@@ -1,0 +1,136 @@
+exercises:
+  - id: "07_mc_secondary"
+    type: "multiple_choice"
+    difficulty: "easy"
+    question: "Compared to the primary immune response, the secondary response is:"
+    choices:
+      - "A) Slower and produces less antibody"
+      - "B) Faster, stronger, and produces higher-affinity antibodies"
+      - "C) Identical in speed and magnitude"
+      - "D) Mediated only by innate immunity"
+    answer: "B"
+    hint: "Cache hit vs cold start — the second time is always faster."
+    explanation: >
+      The secondary response is mediated by pre-existing memory cells that
+      are already affinity-matured. It peaks in 1-3 days (vs 7-14 for primary),
+      produces 100-1000× more antibody, and the antibodies are predominantly
+      high-affinity IgG rather than low-affinity IgM.
+    tags: ["memory", "secondary response"]
+
+  - id: "07_mc_mrna_vaccine"
+    type: "multiple_choice"
+    difficulty: "easy"
+    question: "How do mRNA vaccines (e.g., COVID-19 Pfizer/Moderna) work?"
+    choices:
+      - "A) They inject live weakened virus"
+      - "B) They deliver mRNA encoding the antigen; the host cell produces the protein"
+      - "C) They inject pre-formed antibodies"
+      - "D) They directly edit the host genome to express the antigen"
+    answer: "B"
+    hint: "mRNA = source code. The cell's ribosome = the runtime that builds the protein."
+    explanation: >
+      mRNA vaccines deliver lipid-nanoparticle-encapsulated mRNA encoding the
+      target antigen (e.g., SARS-CoV-2 spike protein). Host ribosomes translate
+      the mRNA into protein, which is then presented via MHC to trigger adaptive
+      immune responses. The mRNA is degraded within days and does not integrate
+      into the genome.
+    tags: ["mRNA vaccine", "COVID-19"]
+
+  - id: "07_matching_memory"
+    type: "matching"
+    difficulty: "medium"
+    question: "Match each memory T cell subset to its primary location and function:"
+    left_items:
+      - "T_CM (central memory)"
+      - "T_EM (effector memory)"
+      - "T_RM (tissue-resident memory)"
+      - "Long-lived plasma cells"
+    right_items:
+      - "Lymph nodes; self-renew and proliferate on recall"
+      - "Blood and tissues; immediate effector function"
+      - "Barrier tissues (skin, lung); first responders at entry sites"
+      - "Bone marrow; continuously secrete antibodies for decades"
+    answer:
+      "T_CM (central memory)": "Lymph nodes; self-renew and proliferate on recall"
+      "T_EM (effector memory)": "Blood and tissues; immediate effector function"
+      "T_RM (tissue-resident memory)": "Barrier tissues (skin, lung); first responders at entry sites"
+      "Long-lived plasma cells": "Bone marrow; continuously secrete antibodies for decades"
+    hint: "Central = lymph nodes, effector = circulating, resident = barrier tissues, plasma = bone marrow."
+    explanation: >
+      Memory T cell subsets are stratified by location and function. T_CM cells
+      reside in lymph nodes and provide a renewable pool. T_EM cells circulate
+      and provide rapid effector function. T_RM cells are permanently stationed
+      in barrier tissues. Long-lived plasma cells in the bone marrow maintain
+      serum antibody levels without needing re-stimulation.
+    tags: ["memory T cells", "matching"]
+
+  - id: "07_fill_adjuvant"
+    type: "fill_in_the_blank"
+    difficulty: "medium"
+    question: "Vaccine ____ are substances added to enhance the immune response by activating innate immunity and promoting stronger adaptive responses."
+    answer: "adjuvants"
+    hint: "From Latin 'adjuvare' (to help). They boost the signal, like feature engineering."
+    explanation: >
+      Adjuvants (e.g., alum, AS01, MF59) activate innate immune pathways
+      via PRRs, enhance antigen presentation, promote germinal centre reactions,
+      and improve memory formation. Without adjuvants, purified protein antigens
+      often generate weak, short-lived responses.
+    tags: ["adjuvant", "vaccination"]
+
+  - id: "07_ordering_vaccination"
+    type: "ordering"
+    difficulty: "medium"
+    question: "Arrange the immunological events following vaccination in order:"
+    choices:
+      - "Vaccine antigen is injected (with adjuvant)"
+      - "Innate immune cells (DCs) capture and process antigen"
+      - "DCs migrate to draining lymph node and present antigen to T cells"
+      - "Activated T cells provide help to B cells in germinal centres"
+      - "B cells undergo somatic hypermutation and affinity maturation"
+      - "Memory B cells and long-lived plasma cells are generated"
+    answer:
+      - "Vaccine antigen is injected (with adjuvant)"
+      - "Innate immune cells (DCs) capture and process antigen"
+      - "DCs migrate to draining lymph node and present antigen to T cells"
+      - "Activated T cells provide help to B cells in germinal centres"
+      - "B cells undergo somatic hypermutation and affinity maturation"
+      - "Memory B cells and long-lived plasma cells are generated"
+    hint: "Injection → innate processing → antigen presentation → adaptive activation → memory."
+    explanation: >
+      Vaccination follows the natural immune response pipeline: antigen delivery
+      → innate capture/processing → DC migration and T cell priming → GC
+      reactions with T cell help → SHM/affinity maturation → memory cell and
+      plasma cell output. This process takes 2-4 weeks for a primary vaccination.
+    tags: ["vaccination", "ordering"]
+
+  - id: "07_case_systems_vacc"
+    type: "case_study"
+    difficulty: "hard"
+    question: >
+      You analyse longitudinal blood transcriptomics data from 50 individuals
+      at days 0, 1, 7, and 28 after influenza vaccination. At day 1, strong
+      innate signatures (interferon, TLR signalling) predict higher antibody
+      titres at day 28. Subjects with weak day-1 innate responses show poor
+      seroconversion.
+
+      Why would early innate responses predict later adaptive immunity
+      outcomes? How could this inform personalised vaccination strategies?
+    answer:
+      - "innate"
+      - "adjuvant"
+      - "dendritic cell"
+      - "antigen presentation"
+      - "predict"
+      - "systems vaccinology"
+      - "biomarker"
+    hint: "Innate immunity sets the stage for adaptive responses. Strong innate activation = better antigen presentation = stronger adaptive response."
+    explanation: >
+      Early innate responses (interferons, TLR signalling) reflect effective
+      DC activation and antigen presentation — the prerequisite for robust
+      adaptive immunity. Strong innate signatures at day 1 indicate that DCs
+      are efficiently processing antigen and migrating to lymph nodes, which
+      drives stronger GC reactions and higher antibody output by day 28.
+      This systems vaccinology approach could guide personalised strategies:
+      individuals with weak innate signatures might benefit from stronger
+      adjuvants, booster doses, or alternative vaccine platforms.
+    tags: ["case study", "systems vaccinology", "transcriptomics"]

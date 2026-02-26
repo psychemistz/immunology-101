@@ -12,3 +12,66 @@ modules:
     order: 1
     prerequisites: []
     directory: "01_cells_of_immunity"
+
+  - id: "02_innate_immunity"
+    title: "Innate Immunity: First Line of Defence"
+    description: "Explore the firewall of your immune system — pattern recognition, complement, and inflammation."
+    order: 2
+    prerequisites: ["01_cells_of_immunity"]
+    directory: "02_innate_immunity"
+
+  - id: "03_antibodies"
+    title: "B Cells & Antibodies"
+    description: "How B cells generate diverse antibodies — the key-value store of adaptive immunity."
+    order: 3
+    prerequisites: ["01_cells_of_immunity"]
+    directory: "03_antibodies"
+
+  - id: "04_t_cells"
+    title: "T Cells & Cell-Mediated Immunity"
+    description: "T cell development, activation, and killing — the process scheduler and ACLs of immunity."
+    order: 4
+    prerequisites: ["01_cells_of_immunity"]
+    directory: "04_t_cells"
+
+  - id: "05_cytokines"
+    title: "Cytokines & Cell Signalling"
+    description: "The immune system's message queue — how cells communicate via cytokines and chemokines."
+    order: 5
+    prerequisites: ["02_innate_immunity", "03_antibodies", "04_t_cells"]
+    directory: "05_cytokines"
+
+  - id: "06_tolerance_autoimmunity"
+    title: "Immune Tolerance & Autoimmunity"
+    description: "Input validation for the immune system — how self-tolerance works and what happens when it fails."
+    order: 6
+    prerequisites: ["04_t_cells", "05_cytokines"]
+    directory: "06_tolerance_autoimmunity"
+
+  - id: "07_memory_vaccination"
+    title: "Immunological Memory & Vaccination"
+    description: "Caching and pre-trained models — how the immune system remembers and how vaccines exploit this."
+    order: 7
+    prerequisites: ["03_antibodies", "04_t_cells"]
+    directory: "07_memory_vaccination"
+
+  - id: "08_tumour_immunology"
+    title: "Tumour Immunology"
+    description: "Immune surveillance, tumour evasion, and immunotherapy — adversarial ML meets cancer biology."
+    order: 8
+    prerequisites: ["04_t_cells", "05_cytokines"]
+    directory: "08_tumour_immunology"
+
+  - id: "09_infectious_disease"
+    title: "Infection & Immune Evasion"
+    description: "The arms race between pathogens and immunity — exploit techniques and obfuscation strategies."
+    order: 9
+    prerequisites: ["02_innate_immunity", "03_antibodies", "04_t_cells"]
+    directory: "09_infectious_disease"
+
+  - id: "10_computational_immunology"
+    title: "Computational Immunology"
+    description: "Capstone — bioinformatics pipelines, tools, and databases for immune data analysis."
+    order: 10
+    prerequisites: ["01_cells_of_immunity", "02_innate_immunity", "03_antibodies", "04_t_cells", "05_cytokines", "06_tolerance_autoimmunity", "07_memory_vaccination", "08_tumour_immunology", "09_infectious_disease"]
+    directory: "10_computational_immunology"

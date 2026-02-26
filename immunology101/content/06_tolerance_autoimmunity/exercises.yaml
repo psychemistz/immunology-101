@@ -1,0 +1,134 @@
+exercises:
+  - id: "06_mc_aire"
+    type: "multiple_choice"
+    difficulty: "easy"
+    question: "What is the role of the AIRE transcription factor in the thymus?"
+    choices:
+      - "A) It activates T cells against pathogens"
+      - "B) It drives expression of tissue-specific antigens for self-tolerance testing"
+      - "C) It promotes antibody class switching"
+      - "D) It recruits neutrophils to sites of infection"
+    answer: "B"
+    hint: "AIRE = Autoimmune Regulator. It helps test T cells against self-antigens they'd normally never see in the thymus."
+    explanation: >
+      AIRE forces thymic epithelial cells to express proteins normally found
+      only in specific organs (e.g., insulin, thyroglobulin). This allows
+      developing T cells to be tested against a comprehensive self-antigen
+      library. Mutations in AIRE cause autoimmune polyendocrinopathy syndrome
+      type 1 (APS-1).
+    tags: ["AIRE", "central tolerance", "thymus"]
+
+  - id: "06_mc_anergy"
+    type: "multiple_choice"
+    difficulty: "easy"
+    question: "A T cell that receives TCR stimulation (Signal 1) without co-stimulation (Signal 2) becomes:"
+    choices:
+      - "A) A memory T cell"
+      - "B) A Treg cell"
+      - "C) Anergic (functionally unresponsive)"
+      - "D) A cytotoxic T cell"
+    answer: "C"
+    hint: "Authentication without authorisation leads to account lockout."
+    explanation: >
+      Anergy is a peripheral tolerance mechanism. Self-reactive T cells that
+      encounter self-antigen on non-professional APCs (which lack B7
+      co-stimulatory molecules) receive Signal 1 without Signal 2, rendering
+      them functionally unresponsive. This prevents autoimmune activation.
+    tags: ["anergy", "peripheral tolerance"]
+
+  - id: "06_matching_autoimmune"
+    type: "matching"
+    difficulty: "medium"
+    question: "Match each autoimmune disease to its primary target:"
+    left_items:
+      - "Type 1 diabetes"
+      - "Multiple sclerosis"
+      - "Graves' disease"
+      - "Systemic lupus erythematosus"
+    right_items:
+      - "Pancreatic β cells (insulin-producing)"
+      - "CNS myelin sheaths"
+      - "TSH receptor (stimulatory autoantibodies)"
+      - "Nuclear antigens (DNA, histones)"
+    answer:
+      "Type 1 diabetes": "Pancreatic β cells (insulin-producing)"
+      "Multiple sclerosis": "CNS myelin sheaths"
+      "Graves' disease": "TSH receptor (stimulatory autoantibodies)"
+      "Systemic lupus erythematosus": "Nuclear antigens (DNA, histones)"
+    hint: "T1D = beta cells, MS = myelin, Graves' = thyroid receptor, SLE = nuclear components."
+    explanation: >
+      Each autoimmune disease targets specific self-antigens. T1D: CD8⁺ T cells
+      destroy insulin-producing β cells. MS: T cells attack myelin. Graves':
+      autoantibodies stimulate TSH receptors causing hyperthyroidism. SLE:
+      autoantibodies against DNA and nuclear proteins form immune complexes
+      affecting multiple organs.
+    tags: ["autoimmune", "matching"]
+
+  - id: "06_fill_treg"
+    type: "fill_in_the_blank"
+    difficulty: "medium"
+    question: "Regulatory T cells (Tregs) are characterised by expression of the master transcription factor ____, and they suppress excessive immune responses."
+    answer: "FOXP3"
+    hint: "This forkhead-box transcription factor is essential for Treg development and function."
+    explanation: >
+      FOXP3 (Forkhead box P3) is the master transcription factor for Treg
+      identity and function. Mutations in FOXP3 cause IPEX syndrome — a fatal
+      multi-organ autoimmune disease, demonstrating the critical importance
+      of Tregs in maintaining self-tolerance.
+    tags: ["Treg", "FOXP3", "tolerance"]
+
+  - id: "06_ordering_tolerance"
+    type: "ordering"
+    difficulty: "medium"
+    question: "Arrange these tolerance mechanisms from earliest (development) to latest (periphery):"
+    choices:
+      - "V(D)J recombination generates diverse TCRs in the thymus"
+      - "Positive selection ensures TCR can bind self-MHC"
+      - "AIRE-mediated negative selection removes strongly self-reactive clones"
+      - "Surviving T cells export to periphery"
+      - "Peripheral anergy inactivates self-reactive escapees"
+      - "Tregs actively suppress any remaining autoreactive responses"
+    answer:
+      - "V(D)J recombination generates diverse TCRs in the thymus"
+      - "Positive selection ensures TCR can bind self-MHC"
+      - "AIRE-mediated negative selection removes strongly self-reactive clones"
+      - "Surviving T cells export to periphery"
+      - "Peripheral anergy inactivates self-reactive escapees"
+      - "Tregs actively suppress any remaining autoreactive responses"
+    hint: "Central (thymus) mechanisms come first, then peripheral (tissue) mechanisms."
+    explanation: >
+      Tolerance is layered: TCR generation → positive selection → negative
+      selection (central) → export → anergy and Treg suppression (peripheral).
+      Each layer catches escapees from the previous one, like nested input
+      validation.
+    tags: ["tolerance", "ordering"]
+
+  - id: "06_case_hla"
+    type: "case_study"
+    difficulty: "hard"
+    question: >
+      A GWAS study identifies HLA-DRB1*04:01 as a strong risk allele for
+      rheumatoid arthritis (OR = 4.2). You also find that T cells from
+      RA patients show oligoclonal expansion targeting citrullinated peptides
+      presented by this HLA allele.
+
+      Explain how a specific HLA allele can predispose to autoimmunity.
+      What does oligoclonal T cell expansion suggest about the disease mechanism?
+    answer:
+      - "peptide presentation"
+      - "MHC"
+      - "self-antigen"
+      - "citrullinated"
+      - "antigen-driven"
+      - "clonal expansion"
+      - "autoreactive"
+    hint: "Different HLA alleles bind different peptide repertoires. If an allele binds self-peptides well, it can present them to T cells."
+    explanation: >
+      HLA-DRB1*04:01 has a peptide-binding groove that efficiently presents
+      citrullinated self-peptides (modified arginine residues common in
+      inflamed joints). This enables CD4⁺ T cells to recognise these modified
+      self-antigens as foreign. Oligoclonal T cell expansion indicates that
+      the response is antigen-driven (not random inflammation) — specific
+      T cell clones are being repeatedly activated by citrullinated peptides,
+      driving chronic autoimmune joint inflammation.
+    tags: ["case study", "HLA", "GWAS", "RA", "autoimmunity"]

@@ -1,0 +1,132 @@
+exercises:
+  - id: "04_mc_two_signal"
+    type: "multiple_choice"
+    difficulty: "easy"
+    question: "What happens when a T cell receives Signal 1 (TCR engagement) but NOT Signal 2 (co-stimulation)?"
+    choices:
+      - "A) The T cell activates normally"
+      - "B) The T cell becomes anergic (unresponsive)"
+      - "C) The T cell switches to a B cell"
+      - "D) The T cell immediately undergoes apoptosis"
+    answer: "B"
+    hint: "Authentication without authorisation — access denied, account locked."
+    explanation: >
+      Without co-stimulation (Signal 2), TCR engagement alone leads to anergy —
+      a state of functional unresponsiveness. This is a key peripheral tolerance
+      mechanism that prevents T cells from attacking self-tissues that lack
+      co-stimulatory molecules.
+    tags: ["T cell", "activation", "anergy"]
+
+  - id: "04_mc_cd8_killing"
+    type: "multiple_choice"
+    difficulty: "easy"
+    question: "CD8+ cytotoxic T cells kill target cells primarily through which mechanism?"
+    choices:
+      - "A) Antibody secretion"
+      - "B) Complement activation"
+      - "C) Perforin/granzyme-mediated apoptosis"
+      - "D) Phagocytosis"
+    answer: "C"
+    hint: "Perforin makes holes, granzymes enter and trigger cell death — exploit + payload."
+    explanation: >
+      CD8+ CTLs kill via the perforin/granzyme pathway: perforin forms pores
+      in the target cell membrane, and granzymes (serine proteases) enter to
+      activate caspases and trigger apoptosis. The Fas/FasL pathway is a
+      secondary killing mechanism.
+    tags: ["CD8", "CTL", "perforin", "granzyme"]
+
+  - id: "04_matching_cd4_subsets"
+    type: "matching"
+    difficulty: "medium"
+    question: "Match each CD4+ T helper subset to its key cytokine and target:"
+    left_items:
+      - "Th1"
+      - "Th2"
+      - "Th17"
+      - "Treg"
+    right_items:
+      - "IFN-γ — activates macrophages against intracellular pathogens"
+      - "IL-4 — drives anti-parasite and allergic responses"
+      - "IL-17 — recruits neutrophils against extracellular bacteria"
+      - "IL-10 — suppresses immune responses to maintain tolerance"
+    answer:
+      "Th1": "IFN-γ — activates macrophages against intracellular pathogens"
+      "Th2": "IL-4 — drives anti-parasite and allergic responses"
+      "Th17": "IL-17 — recruits neutrophils against extracellular bacteria"
+      "Treg": "IL-10 — suppresses immune responses to maintain tolerance"
+    hint: "Th1 = intracellular threats, Th2 = parasites/allergy, Th17 = extracellular bugs, Treg = suppression."
+    explanation: >
+      Each Th subset is polarised by specific cytokines and targets different
+      threats. Th1 (IFN-γ) fights intracellular pathogens. Th2 (IL-4/5/13)
+      fights helminths and drives allergy. Th17 (IL-17) recruits neutrophils
+      against extracellular bacteria and fungi. Tregs (IL-10, TGF-β) suppress
+      excessive responses.
+    tags: ["Th subset", "cytokine", "matching"]
+
+  - id: "04_fill_thymus"
+    type: "fill_in_the_blank"
+    difficulty: "medium"
+    question: "During T cell development, thymocytes that bind self-peptide/MHC too strongly are eliminated by ____ selection."
+    answer: "negative"
+    hint: "This process removes self-reactive T cells — like a security audit rejecting dangerous inputs."
+    explanation: >
+      Negative selection eliminates thymocytes with high affinity for
+      self-peptide/MHC complexes, preventing autoimmune T cells from reaching
+      the periphery. This occurs primarily in the thymic medulla, where the
+      transcription factor AIRE drives expression of tissue-specific antigens.
+    tags: ["thymus", "negative selection", "tolerance"]
+
+  - id: "04_ordering_activation"
+    type: "ordering"
+    difficulty: "medium"
+    question: "Arrange the steps of naive CD8+ T cell activation and killing in order:"
+    choices:
+      - "Dendritic cell presents antigen on MHC class I to the TCR"
+      - "Co-stimulatory signal (B7-CD28) confirms activation"
+      - "T cell proliferates and differentiates into effector CTLs"
+      - "CTL recognises the same peptide-MHC I on an infected cell"
+      - "CTL releases perforin and granzymes toward the target"
+      - "Target cell undergoes apoptosis"
+    answer:
+      - "Dendritic cell presents antigen on MHC class I to the TCR"
+      - "Co-stimulatory signal (B7-CD28) confirms activation"
+      - "T cell proliferates and differentiates into effector CTLs"
+      - "CTL recognises the same peptide-MHC I on an infected cell"
+      - "CTL releases perforin and granzymes toward the target"
+      - "Target cell undergoes apoptosis"
+    hint: "Priming → expansion → surveillance → kill. Like training a model, then deploying it."
+    explanation: >
+      CD8+ T cell activation follows: DC priming (Signal 1 + 2) → clonal
+      expansion → effector CTL generation → target recognition → cytotoxic
+      granule release → target apoptosis. The priming phase takes days, but
+      once activated, CTLs kill efficiently and sequentially.
+    tags: ["CD8", "activation", "ordering"]
+
+  - id: "04_case_neoantigen"
+    type: "case_study"
+    difficulty: "hard"
+    question: >
+      You are building a neoantigen prediction pipeline for a melanoma patient.
+      You identify a somatic mutation (V600E in BRAF) and want to predict
+      whether the mutant peptide will be presented by the patient's MHC class I
+      molecules.
+
+      What patient-specific information do you need? Why does MHC class I
+      presentation matter for CD8+ T cell recognition?
+    answer:
+      - "HLA"
+      - "genotype"
+      - "MHC class I"
+      - "peptide binding"
+      - "CD8"
+      - "neoantigen"
+    hint: "MHC class I molecules are highly polymorphic — each patient has different alleles (HLA type)."
+    explanation: >
+      You need the patient's HLA class I genotype (HLA-A, -B, -C alleles),
+      as MHC I molecules are highly polymorphic and each allele binds a
+      different set of peptides. Tools like NetMHCpan predict binding affinity
+      between mutant peptides and specific HLA alleles. MHC class I
+      presentation is essential because CD8+ CTLs only recognise peptides in
+      the context of MHC I — without presentation, the mutation is invisible
+      to the cytotoxic immune response, regardless of its oncogenic importance.
+    tags: ["case study", "neoantigen", "HLA", "MHC"]

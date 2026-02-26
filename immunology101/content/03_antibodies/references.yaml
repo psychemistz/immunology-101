@@ -1,0 +1,24 @@
+references:
+  - title: "Anatomy and Physiology 2e — Chapter 21: Adaptive Immune Response"
+    url: "https://openstax.org/books/anatomy-and-physiology-2e/pages/21-4-the-adaptive-immune-response-b-lymphocytes-and-antibodies"
+    source: "OpenStax"
+    license: "CC BY 4.0"
+    notes: "Undergraduate-level overview of B cells and antibody biology."
+
+  - title: "Janeway's Immunobiology — The Generation of Diversity"
+    url: "https://www.ncbi.nlm.nih.gov/books/NBK27140/"
+    source: "NCBI Bookshelf"
+    license: "CC BY 4.0"
+    notes: "Detailed coverage of V(D)J recombination and antibody diversity."
+
+  - title: "IMGT — The International ImMunoGeneTics Information System"
+    url: "https://www.imgt.org/"
+    source: "IMGT"
+    license: "CC BY 4.0"
+    notes: "Reference database for immunoglobulin gene nomenclature and sequences."
+
+  - title: "AIRR Community Standards for Adaptive Immune Receptor Repertoire Sequencing"
+    url: "https://docs.airr-community.org/"
+    source: "AIRR Community"
+    license: "CC BY 4.0"
+    notes: "Standards for BCR/TCR-seq data representation and analysis."

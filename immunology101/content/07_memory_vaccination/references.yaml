@@ -1,0 +1,24 @@
+references:
+  - title: "Anatomy and Physiology 2e — Chapter 21: Immunological Memory"
+    url: "https://openstax.org/books/anatomy-and-physiology-2e/pages/21-5-the-immune-response-against-pathogens"
+    source: "OpenStax"
+    license: "CC BY 4.0"
+    notes: "Undergraduate-level coverage of immune memory and vaccination principles."
+
+  - title: "Janeway's Immunobiology — Immunological Memory"
+    url: "https://www.ncbi.nlm.nih.gov/books/NBK27158/"
+    source: "NCBI Bookshelf"
+    license: "CC BY 4.0"
+    notes: "Detailed coverage of memory cell biology and vaccine mechanisms."
+
+  - title: "The Immune Epitope Database (IEDB)"
+    url: "https://www.iedb.org/"
+    source: "IEDB / NIAID"
+    license: "Public domain"
+    notes: "Database for epitope prediction in vaccine design."
+
+  - title: "Systems Vaccinology: A Promise for the Old and the New"
+    url: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4243151/"
+    source: "NCBI PMC"
+    license: "CC BY 4.0"
+    notes: "Review of systems biology approaches to predicting vaccine responses."

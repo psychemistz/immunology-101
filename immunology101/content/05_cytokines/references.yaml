@@ -1,0 +1,24 @@
+references:
+  - title: "Anatomy and Physiology 2e — Chapter 21: Cytokines"
+    url: "https://openstax.org/books/anatomy-and-physiology-2e/pages/21-introduction"
+    source: "OpenStax"
+    license: "CC BY 4.0"
+    notes: "Introductory coverage of cytokine biology in immune responses."
+
+  - title: "Janeway's Immunobiology — Cytokines and Their Receptors"
+    url: "https://www.ncbi.nlm.nih.gov/books/NBK27100/"
+    source: "NCBI Bookshelf"
+    license: "CC BY 4.0"
+    notes: "Detailed reference on cytokine families, receptors, and signalling."
+
+  - title: "CellChat: Inference of Cell-Cell Communication"
+    url: "https://www.nature.com/articles/s41467-021-21246-9"
+    source: "Nature Communications"
+    license: "CC BY 4.0"
+    notes: "Tool for inferring cytokine-mediated communication from scRNA-seq."
+
+  - title: "JAK-STAT Signalling Pathway Review"
+    url: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3909993/"
+    source: "NCBI PMC"
+    license: "CC BY 4.0"
+    notes: "Comprehensive review of JAK-STAT pathway in immune regulation."

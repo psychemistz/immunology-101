@@ -1,0 +1,24 @@
+references:
+  - title: "Janeway's Immunobiology — Host Defence Against Infection"
+    url: "https://www.ncbi.nlm.nih.gov/books/NBK27114/"
+    source: "NCBI Bookshelf"
+    license: "CC BY 4.0"
+    notes: "Comprehensive coverage of immune responses to different pathogen classes."
+
+  - title: "Anatomy and Physiology 2e — Chapter 21: Diseases of the Immune System"
+    url: "https://openstax.org/books/anatomy-and-physiology-2e/pages/21-6-diseases-associated-with-depressed-or-overactive-immune-responses"
+    source: "OpenStax"
+    license: "CC BY 4.0"
+    notes: "Introductory coverage of immunodeficiency and immune evasion."
+
+  - title: "Mechanisms of Viral Immune Evasion"
+    url: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7149990/"
+    source: "NCBI PMC"
+    license: "CC BY 4.0"
+    notes: "Review of viral strategies for evading innate and adaptive immunity."
+
+  - title: "Nextstrain: Real-Time Tracking of Pathogen Evolution"
+    url: "https://nextstrain.org/"
+    source: "Nextstrain"
+    license: "CC BY 4.0"
+    notes: "Open-source platform for phylogenetic analysis of pathogen genomes."

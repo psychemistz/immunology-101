@@ -1,0 +1,132 @@
+exercises:
+  - id: "03_mc_fab"
+    type: "multiple_choice"
+    difficulty: "easy"
+    question: "Which part of an antibody determines its antigen-binding specificity?"
+    choices:
+      - "A) Fc region"
+      - "B) Fab region"
+      - "C) Hinge region"
+      - "D) J chain"
+    answer: "B"
+    hint: "Fab stands for 'Fragment, antigen-binding' — the variable tips of the Y."
+    explanation: >
+      The Fab region contains the variable domains (VH + VL) that form the
+      antigen-binding site. Each antibody has two identical Fab arms. The Fc
+      region handles effector functions (complement, cell binding) but does
+      not determine antigen specificity.
+    tags: ["antibody", "structure", "Fab"]
+
+  - id: "03_mc_isotype"
+    type: "multiple_choice"
+    difficulty: "easy"
+    question: "Which antibody isotype is the first produced during a primary immune response?"
+    choices:
+      - "A) IgG"
+      - "B) IgA"
+      - "C) IgM"
+      - "D) IgE"
+    answer: "C"
+    hint: "This pentameric antibody is the 'default' before class switching occurs."
+    explanation: >
+      IgM is the first antibody produced in a primary response. It is secreted
+      as a pentamer, giving it 10 binding sites and high avidity despite lower
+      individual affinity. Class-switch recombination later produces IgG, IgA,
+      or IgE with the same antigen specificity but different effector functions.
+    tags: ["isotype", "IgM", "primary response"]
+
+  - id: "03_matching_isotype_function"
+    type: "matching"
+    difficulty: "medium"
+    question: "Match each antibody isotype to its primary location/function:"
+    left_items:
+      - "IgG"
+      - "IgA"
+      - "IgE"
+      - "IgM"
+    right_items:
+      - "Most abundant in blood; opsonisation and neutralisation"
+      - "Mucosal surfaces; first line at body openings"
+      - "Bound to mast cells; allergy and anti-parasite defence"
+      - "Pentamer in blood; first responder, complement activation"
+    answer:
+      "IgG": "Most abundant in blood; opsonisation and neutralisation"
+      "IgA": "Mucosal surfaces; first line at body openings"
+      "IgE": "Bound to mast cells; allergy and anti-parasite defence"
+      "IgM": "Pentamer in blood; first responder, complement activation"
+    hint: "IgG is the workhorse, IgA guards mucosal barriers, IgE triggers mast cells."
+    explanation: >
+      IgG is the most abundant serum antibody and handles opsonisation and
+      neutralisation. IgA (dimer) protects mucosal surfaces. IgE binds mast
+      cells via FcεRI and mediates allergic responses and anti-parasite
+      defence. IgM (pentamer) activates complement and is the first responder.
+    tags: ["isotype", "matching"]
+
+  - id: "03_fill_shm"
+    type: "fill_in_the_blank"
+    difficulty: "medium"
+    question: "During germinal centre reactions, B cells undergo somatic ____ to introduce point mutations that can increase antibody affinity."
+    answer: "hypermutation"
+    hint: "This process introduces random mutations — like a hyperparameter random search."
+    explanation: >
+      Somatic hypermutation (SHM) introduces point mutations in the variable
+      regions of immunoglobulin genes at a rate ~10⁶ times higher than normal.
+      B cells with mutations that improve antigen binding are positively
+      selected, driving affinity maturation.
+    tags: ["SHM", "germinal centre", "affinity"]
+
+  - id: "03_ordering_b_cell"
+    type: "ordering"
+    difficulty: "medium"
+    question: "Arrange the stages of B cell activation and antibody production in order:"
+    choices:
+      - "Naive B cell encounters matching antigen"
+      - "B cell receives T cell help (CD4+ signals)"
+      - "B cell enters germinal centre"
+      - "Somatic hypermutation and affinity maturation occur"
+      - "High-affinity clones differentiate into plasma cells"
+      - "Plasma cells secrete large quantities of antibody"
+    answer:
+      - "Naive B cell encounters matching antigen"
+      - "B cell receives T cell help (CD4+ signals)"
+      - "B cell enters germinal centre"
+      - "Somatic hypermutation and affinity maturation occur"
+      - "High-affinity clones differentiate into plasma cells"
+      - "Plasma cells secrete large quantities of antibody"
+    hint: "Start with antigen encounter, end with antibody secretion — it's a training pipeline."
+    explanation: >
+      B cell activation follows a pipeline: antigen encounter → T cell help →
+      germinal centre entry → SHM and selection → plasma cell differentiation
+      → antibody secretion. This process takes 1-2 weeks in a primary response
+      but is much faster in memory recall responses.
+    tags: ["B cell", "activation", "ordering"]
+
+  - id: "03_case_bcr"
+    type: "case_study"
+    difficulty: "hard"
+    question: >
+      You analyse BCR-seq data from a COVID-19 patient at day 14 post-symptom
+      onset. You observe several large B cell clones with high somatic
+      hypermutation rates in their heavy chain V regions. Many clones share
+      similar CDR3 sequences despite deriving from different V gene segments.
+
+      What does this clonal expansion with high SHM suggest about the immune
+      response? What is the significance of convergent CDR3 sequences across
+      different patients?
+    answer:
+      - "germinal centre"
+      - "affinity maturation"
+      - "clonal expansion"
+      - "convergent"
+      - "public clonotype"
+      - "antigen-driven"
+    hint: "High SHM + clonal expansion = germinal centre activity. Shared CDR3s across people = convergent selection."
+    explanation: >
+      Large clones with high SHM indicate active germinal centre responses
+      and ongoing affinity maturation — the immune system is refining its
+      antibody response. Convergent CDR3 sequences (public clonotypes) across
+      patients suggest that the SARS-CoV-2 spike protein selects for
+      structurally similar binding solutions, regardless of the starting V gene.
+      This convergence is exploited in vaccine design and therapeutic antibody
+      development.
+    tags: ["case study", "BCR-seq", "clonal expansion", "SHM"]

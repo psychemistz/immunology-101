@@ -1,0 +1,24 @@
+references:
+  - title: "Anatomy and Physiology 2e — Chapter 21: Autoimmune Disorders"
+    url: "https://openstax.org/books/anatomy-and-physiology-2e/pages/21-7-transplantation-and-cancer-immunology"
+    source: "OpenStax"
+    license: "CC BY 4.0"
+    notes: "Introductory coverage of tolerance failure and autoimmune disease."
+
+  - title: "Janeway's Immunobiology — Self-Tolerance and Its Loss"
+    url: "https://www.ncbi.nlm.nih.gov/books/NBK27155/"
+    source: "NCBI Bookshelf"
+    license: "CC BY 4.0"
+    notes: "Comprehensive coverage of central and peripheral tolerance mechanisms."
+
+  - title: "The Role of AIRE in Immune Tolerance"
+    url: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3150425/"
+    source: "NCBI PMC"
+    license: "CC BY 4.0"
+    notes: "Review of AIRE function in thymic self-tolerance and autoimmune prevention."
+
+  - title: "HLA and Autoimmune Disease: A Comprehensive Review"
+    url: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5798455/"
+    source: "NCBI PMC"
+    license: "CC BY 4.0"
+    notes: "Review of HLA genetic associations with autoimmune diseases."

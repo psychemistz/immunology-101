@@ -1,0 +1,137 @@
+exercises:
+  - id: "09_mc_antigenic_drift"
+    type: "multiple_choice"
+    difficulty: "easy"
+    question: "Why does the influenza vaccine need to be updated annually?"
+    choices:
+      - "A) Antibodies only last a few months"
+      - "B) The virus undergoes antigenic drift — accumulating mutations in surface proteins"
+      - "C) The vaccine causes autoimmunity that must be reset"
+      - "D) Influenza only infects during winter months"
+    answer: "B"
+    hint: "The virus is polymorphic malware — it changes its surface 'signature' each season."
+    explanation: >
+      Influenza undergoes antigenic drift — gradual accumulation of mutations
+      in hemagglutinin (HA) and neuraminidase (NA) surface glycoproteins.
+      These changes allow the virus to escape pre-existing antibody immunity,
+      requiring annual vaccine reformulation based on predicted circulating
+      strains.
+    tags: ["influenza", "antigenic drift", "vaccine"]
+
+  - id: "09_mc_hiv"
+    type: "multiple_choice"
+    difficulty: "easy"
+    question: "HIV causes immunodeficiency primarily by destroying which cell type?"
+    choices:
+      - "A) B cells"
+      - "B) Neutrophils"
+      - "C) CD4+ helper T cells"
+      - "D) Natural killer cells"
+    answer: "C"
+    hint: "HIV targets the orchestrator of adaptive immunity — without it, the whole system fails."
+    explanation: >
+      HIV uses the CD4 receptor to infect and destroy CD4⁺ helper T cells.
+      As CD4⁺ counts decline, the immune system loses its ability to
+      coordinate responses, leading to opportunistic infections and cancers
+      that define AIDS. CD4⁺ count is the primary clinical marker for
+      HIV disease progression.
+    tags: ["HIV", "CD4", "immunodeficiency"]
+
+  - id: "09_matching_evasion"
+    type: "matching"
+    difficulty: "medium"
+    question: "Match each pathogen evasion strategy to its mechanism:"
+    left_items:
+      - "Antigenic variation (influenza)"
+      - "Latency (HIV/EBV)"
+      - "Capsule (S. pneumoniae)"
+      - "Interferon antagonism (SARS-CoV-2)"
+    right_items:
+      - "Mutate surface proteins to escape antibody recognition"
+      - "Integrate into host genome; express no antigens while dormant"
+      - "Polysaccharide coat prevents phagocytosis and complement"
+      - "Viral proteins block IFN signalling to delay antiviral response"
+    answer:
+      "Antigenic variation (influenza)": "Mutate surface proteins to escape antibody recognition"
+      "Latency (HIV/EBV)": "Integrate into host genome; express no antigens while dormant"
+      "Capsule (S. pneumoniae)": "Polysaccharide coat prevents phagocytosis and complement"
+      "Interferon antagonism (SARS-CoV-2)": "Viral proteins block IFN signalling to delay antiviral response"
+    hint: "Each strategy targets a different arm of immunity — antibodies, T cells, phagocytes, interferons."
+    explanation: >
+      Pathogens target multiple immune mechanisms: antigenic variation evades
+      antibodies, latency evades T cells (no antigen expression), capsules
+      evade phagocytosis, and IFN antagonism delays the innate antiviral
+      response. Successful pathogens often combine multiple strategies.
+    tags: ["evasion", "matching"]
+
+  - id: "09_fill_latency"
+    type: "fill_in_the_blank"
+    difficulty: "medium"
+    question: "Herpesviruses like EBV and HSV establish ____ — a dormant state where the viral genome persists but no viral proteins are produced, making the virus invisible to immune surveillance."
+    answer: "latency"
+    hint: "Like a rootkit — dormant until reactivated, invisible to the scanner."
+    explanation: >
+      Viral latency is a state where the viral genome persists in host cells
+      (often as episomes or integrated DNA) without producing viral proteins.
+      Since no foreign peptides are presented on MHC, the virus is invisible
+      to T cells. Reactivation can occur when immune surveillance weakens
+      (stress, immunosuppression), producing recurrent disease.
+    tags: ["latency", "herpesvirus", "evasion"]
+
+  - id: "09_ordering_hiv"
+    type: "ordering"
+    difficulty: "medium"
+    question: "Arrange the stages of HIV infection and immune decline in order:"
+    choices:
+      - "HIV infects CD4+ T cells via CD4 and CCR5/CXCR4 co-receptors"
+      - "Acute phase: high viral load, flu-like symptoms, CD4 count drops"
+      - "Immune response partially controls virus; clinical latency begins"
+      - "Chronic phase: gradual CD4+ T cell depletion over years"
+      - "CD4 count falls below 200 cells/μL"
+      - "AIDS: opportunistic infections and cancers develop"
+    answer:
+      - "HIV infects CD4+ T cells via CD4 and CCR5/CXCR4 co-receptors"
+      - "Acute phase: high viral load, flu-like symptoms, CD4 count drops"
+      - "Immune response partially controls virus; clinical latency begins"
+      - "Chronic phase: gradual CD4+ T cell depletion over years"
+      - "CD4 count falls below 200 cells/μL"
+      - "AIDS: opportunistic infections and cancers develop"
+    hint: "Infection → acute phase → latency → slow decline → AIDS. The immune system is gradually dismantled."
+    explanation: >
+      HIV progression follows a predictable course: initial infection and
+      acute viraemia → partial immune control (set point) → years of clinical
+      latency with gradual CD4⁺ decline → severe immunodeficiency (AIDS) when
+      CD4⁺ falls below 200/μL. Antiretroviral therapy (ART) can halt
+      progression at any stage by suppressing viral replication.
+    tags: ["HIV", "progression", "ordering"]
+
+  - id: "09_case_phylo"
+    type: "case_study"
+    difficulty: "hard"
+    question: >
+      During a SARS-CoV-2 outbreak investigation, you perform whole-genome
+      sequencing on 50 viral isolates and build a phylogenetic tree. You
+      observe that several isolates carry mutations in the spike protein's
+      receptor-binding domain (RBD) that reduce binding by existing
+      neutralising antibodies (measured by pseudovirus neutralisation assays).
+
+      What evolutionary process is driving these mutations? How does this
+      inform public health response?
+    answer:
+      - "immune evasion"
+      - "antigenic"
+      - "selection"
+      - "escape"
+      - "variant"
+      - "vaccine update"
+      - "surveillance"
+    hint: "Antibody pressure selects for mutations that reduce binding — the virus is evolving to escape immunity."
+    explanation: >
+      These RBD mutations represent antigenic evolution driven by immune
+      selection pressure — the virus evolves to escape neutralising antibodies
+      from prior infection or vaccination. This is analogous to influenza
+      antigenic drift but on a compressed timescale. Public health implications
+      include: genomic surveillance to detect emerging variants, updated
+      vaccine formulations targeting new epitopes, and monitoring of
+      neutralisation escape in convalescent/vaccinated populations.
+    tags: ["case study", "phylogenetics", "SARS-CoV-2", "immune evasion"]

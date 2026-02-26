@@ -1,0 +1,24 @@
+references:
+  - title: "Anatomy and Physiology 2e — Chapter 21: Innate Immune Defences"
+    url: "https://openstax.org/books/anatomy-and-physiology-2e/pages/21-2-barrier-defenses-and-the-innate-immune-response"
+    source: "OpenStax"
+    license: "CC BY 4.0"
+    notes: "Covers barriers, PRRs, complement, and inflammation at introductory level."
+
+  - title: "Janeway's Immunobiology — Innate Immunity"
+    url: "https://www.ncbi.nlm.nih.gov/books/NBK27100/"
+    source: "NCBI Bookshelf"
+    license: "CC BY 4.0"
+    notes: "Detailed coverage of innate recognition and effector mechanisms."
+
+  - title: "Pattern Recognition Receptors and Inflammation"
+    url: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2802855/"
+    source: "NCBI PMC"
+    license: "CC BY 4.0"
+    notes: "Review of PRR families and their roles in initiating immune responses."
+
+  - title: "The NLRP3 Inflammasome: An Overview"
+    url: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6271543/"
+    source: "NCBI PMC"
+    license: "CC BY 4.0"
+    notes: "Comprehensive review of NLRP3 inflammasome biology and disease relevance."

@@ -1,0 +1,142 @@
+exercises:
+  - id: "10_mc_deconvolution"
+    type: "multiple_choice"
+    difficulty: "easy"
+    question: "What does immune deconvolution of bulk RNA-seq estimate?"
+    choices:
+      - "A) The sequence of antibodies in the sample"
+      - "B) The proportions of different immune cell types in the tissue"
+      - "C) The phylogenetic tree of pathogens"
+      - "D) The binding affinity of peptides to MHC molecules"
+    answer: "B"
+    hint: "Deconvolution 'unmixes' the bulk signal to estimate cell type fractions."
+    explanation: >
+      Immune deconvolution algorithms (CIBERSORTx, MCP-counter, TIMER) use
+      reference gene expression signatures to estimate the proportion of
+      different immune cell types in a bulk RNA-seq sample. This is critical
+      when single-cell resolution is unavailable.
+    tags: ["deconvolution", "bulk RNA-seq"]
+
+  - id: "10_mc_neoantigen_pipeline"
+    type: "multiple_choice"
+    difficulty: "easy"
+    question: "Which of the following is NOT a typical step in a neoantigen prediction pipeline?"
+    choices:
+      - "A) Somatic variant calling from tumour WES/WGS"
+      - "B) HLA genotyping of the patient"
+      - "C) Predicting peptide-MHC binding affinity"
+      - "D) Measuring serum cholesterol levels"
+    answer: "D"
+    hint: "Neoantigen prediction requires mutations, HLA type, and binding prediction — all immune-related data."
+    explanation: >
+      A neoantigen pipeline requires: (1) somatic variant calling to identify
+      tumour-specific mutations, (2) HLA typing to determine the patient's
+      MHC alleles, and (3) peptide-MHC binding prediction to rank which
+      mutant peptides will be presented. Serum cholesterol is irrelevant
+      to antigen presentation.
+    tags: ["neoantigen", "pipeline"]
+
+  - id: "10_matching_tools"
+    type: "matching"
+    difficulty: "medium"
+    question: "Match each computational immunology task to its primary tool:"
+    left_items:
+      - "Immune cell deconvolution from bulk RNA-seq"
+      - "Peptide-MHC binding prediction"
+      - "Cell-cell communication inference from scRNA-seq"
+      - "BCR/TCR repertoire analysis"
+    right_items:
+      - "CIBERSORTx"
+      - "NetMHCpan"
+      - "CellChat"
+      - "Immcantation"
+    answer:
+      "Immune cell deconvolution from bulk RNA-seq": "CIBERSORTx"
+      "Peptide-MHC binding prediction": "NetMHCpan"
+      "Cell-cell communication inference from scRNA-seq": "CellChat"
+      "BCR/TCR repertoire analysis": "Immcantation"
+    hint: "Each tool specialises in one domain: deconvolution, binding, communication, or repertoire."
+    explanation: >
+      CIBERSORTx estimates cell fractions from bulk expression. NetMHCpan
+      predicts peptide-MHC binding for neoantigen identification. CellChat
+      infers ligand-receptor interactions from scRNA-seq. Immcantation
+      provides a comprehensive framework for BCR/TCR repertoire analysis
+      including clonal lineage reconstruction.
+    tags: ["tools", "matching"]
+
+  - id: "10_fill_spatial"
+    type: "fill_in_the_blank"
+    difficulty: "medium"
+    question: "____ transcriptomics measures gene expression while preserving the spatial location of cells within tissue sections."
+    answer: "Spatial"
+    hint: "This technology adds the 'where' dimension to the 'what' of expression profiling."
+    explanation: >
+      Spatial transcriptomics (e.g., Visium, MERFISH, Slide-seq) captures
+      gene expression data with spatial coordinates, enabling analysis of
+      tissue architecture, cell neighbourhood composition, and spatially
+      variable genes. In immunology, this reveals how immune cells are
+      organised relative to tumour cells, sites of infection, or autoimmune
+      lesions.
+    tags: ["spatial transcriptomics"]
+
+  - id: "10_ordering_scrna_pipeline"
+    type: "ordering"
+    difficulty: "medium"
+    question: "Arrange the steps of a scRNA-seq immune cell type annotation pipeline in order:"
+    choices:
+      - "Generate raw count matrix from sequencing reads"
+      - "Quality control: filter low-quality cells and genes"
+      - "Normalise and log-transform expression values"
+      - "Perform dimensionality reduction (PCA) and clustering"
+      - "Identify marker genes for each cluster"
+      - "Annotate clusters as immune cell types using known markers"
+    answer:
+      - "Generate raw count matrix from sequencing reads"
+      - "Quality control: filter low-quality cells and genes"
+      - "Normalise and log-transform expression values"
+      - "Perform dimensionality reduction (PCA) and clustering"
+      - "Identify marker genes for each cluster"
+      - "Annotate clusters as immune cell types using known markers"
+    hint: "Raw data → QC → normalise → cluster → markers → annotation. Standard scRNA-seq pipeline."
+    explanation: >
+      The scRNA-seq analysis pipeline proceeds: raw counts → QC filtering
+      (remove doublets, dead cells) → normalisation → PCA and clustering
+      (Leiden/Louvain) → differential expression to find marker genes →
+      cell type annotation using canonical immune markers (CD3 for T cells,
+      CD19 for B cells, etc.).
+    tags: ["scRNA-seq", "pipeline", "ordering"]
+
+  - id: "10_case_integrative"
+    type: "case_study"
+    difficulty: "hard"
+    question: >
+      You are designing a computational immunology study for a clinical trial
+      of an anti-PD-1 checkpoint inhibitor in non-small cell lung cancer. You
+      have access to: pre-treatment tumour biopsies (bulk RNA-seq and spatial
+      transcriptomics), paired blood samples (BCR/TCR-seq), and clinical
+      response data.
+
+      Design an analysis strategy that integrates these data types to identify
+      predictive biomarkers of response. Which modules from this course inform
+      each analysis step?
+    answer:
+      - "deconvolution"
+      - "TME"
+      - "spatial"
+      - "TCR"
+      - "clonal"
+      - "neoantigen"
+      - "biomarker"
+      - "integrative"
+    hint: "Combine bulk deconvolution + spatial mapping + TCR expansion + clinical correlation."
+    explanation: >
+      An integrative analysis strategy: (1) CIBERSORTx deconvolution of bulk
+      RNA-seq to estimate CD8⁺, Treg, macrophage fractions (Modules 01, 08);
+      (2) spatial transcriptomics to map T cell-tumour proximity and PD-L1
+      co-localisation (Module 08); (3) TCR-seq to measure clonal expansion
+      and diversity pre/post-treatment (Module 04); (4) correlate all features
+      with clinical response using multivariate models; (5) identify candidate
+      biomarkers — e.g., high baseline CD8⁺ infiltration + spatial proximity
+      + diverse TCR repertoire predicts response. This integrates concepts
+      from nearly every module in the course.
+    tags: ["case study", "integrative", "biomarker", "immunotherapy"]

@@ -1,0 +1,24 @@
+references:
+  - title: "Janeway's Immunobiology — The Immune Response to Tumours"
+    url: "https://www.ncbi.nlm.nih.gov/books/NBK27104/"
+    source: "NCBI Bookshelf"
+    license: "CC BY 4.0"
+    notes: "Comprehensive coverage of tumour immunology and immunotherapy."
+
+  - title: "Cancer Immunoediting: The Three Es"
+    url: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3396065/"
+    source: "NCBI PMC"
+    license: "CC BY 4.0"
+    notes: "Foundational review of elimination, equilibrium, and escape."
+
+  - title: "CIBERSORTx: Cell-Type Deconvolution from Bulk RNA-seq"
+    url: "https://cibersortx.stanford.edu/"
+    source: "Stanford University"
+    license: "Free for academic use"
+    notes: "Tool for estimating immune cell fractions from bulk expression data."
+
+  - title: "pVACtools: Neoantigen Prediction Pipeline"
+    url: "https://pvactools.readthedocs.io/"
+    source: "Griffith Lab / Washington University"
+    license: "BSD-3"
+    notes: "Computational pipeline for personalized neoantigen identification."
