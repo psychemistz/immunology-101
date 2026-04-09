@@ -2,20 +2,16 @@
 
 from __future__ import annotations
 
-from typing import Optional
-
 from immunology101.prompts import TUTOR_SYSTEM_PROMPT, build_exercise_context
 
-AI_MODEL = "claude-sonnet-4-5-20250929"
+AI_MODEL = "claude-sonnet-4-6"
 
 
 def is_available() -> bool:
     """Check if the anthropic package and API key are available."""
     try:
-        import anthropic  # noqa: F401
-        client = anthropic.Anthropic()
-        # Accessing the client validates the API key is set
-        return bool(client.api_key)
+        import anthropic
+        return bool(anthropic.Anthropic().api_key)
     except Exception:
         return False
 
@@ -26,7 +22,7 @@ def ask_tutor(
     exercise_question: str,
     exercise_explanation: str,
     student_question: str,
-) -> Optional[str]:
+) -> str | None:
     """Ask the AI tutor a follow-up question about an exercise.
 
     Returns the AI response, or None if AI is not available.

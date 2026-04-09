@@ -3,7 +3,6 @@
 from __future__ import annotations
 
 from pathlib import Path
-from typing import List
 
 import yaml
 
@@ -21,7 +20,8 @@ CONTENT_DIR = Path(__file__).parent / "content"
 def _read_yaml(path: Path) -> dict:
     """Read and parse a YAML file."""
     with open(path, encoding="utf-8") as f:
-        return yaml.safe_load(f)
+        data = yaml.safe_load(f)
+    return data if isinstance(data, dict) else {}
 
 
 def _read_text(path: Path) -> str:
@@ -37,7 +37,7 @@ def load_manifest(content_dir: Path | None = None) -> CourseManifest:
     return CourseManifest(**data)
 
 
-def load_exercises(module_dir: Path) -> List[Exercise]:
+def load_exercises(module_dir: Path) -> list[Exercise]:
     """Load exercises from a module's exercises.yaml."""
     path = module_dir / "exercises.yaml"
     if not path.exists():
@@ -46,7 +46,7 @@ def load_exercises(module_dir: Path) -> List[Exercise]:
     return [Exercise(**ex) for ex in data.get("exercises", [])]
 
 
-def load_references(module_dir: Path) -> List[Reference]:
+def load_references(module_dir: Path) -> list[Reference]:
     """Load references from a module's references.yaml."""
     path = module_dir / "references.yaml"
     if not path.exists():
@@ -66,7 +66,9 @@ def load_lesson(module_dir: Path) -> str:
 def load_module(entry: ModuleEntry, content_dir: Path | None = None) -> Module:
     """Load a complete module from disk."""
     content_dir = content_dir or CONTENT_DIR
-    module_dir = content_dir / entry.directory
+    module_dir = (content_dir / entry.directory).resolve()
+    if not module_dir.is_relative_to(content_dir.resolve()):
+        raise ValueError(f"Module directory escapes content root: {entry.directory}")
 
     return Module(
         id=entry.id,
@@ -80,17 +82,17 @@ def load_module(entry: ModuleEntry, content_dir: Path | None = None) -> Module:
     )
 
 
-def load_all_modules(content_dir: Path | None = None) -> List[Module]:
+def load_all_modules(content_dir: Path | None = None) -> list[Module]:
     """Load all modules defined in the course manifest."""
     content_dir = content_dir or CONTENT_DIR
     manifest = load_manifest(content_dir)
     return [load_module(entry, content_dir) for entry in manifest.modules]
 
 
-def validate_content(content_dir: Path | None = None) -> List[str]:
+def validate_content(content_dir: Path | None = None) -> list[str]:
     """Validate all content files. Returns a list of error messages (empty = valid)."""
     content_dir = content_dir or CONTENT_DIR
-    errors: List[str] = []
+    errors: list[str] = []
 
     # Check manifest
     manifest_path = content_dir / "course.yaml"
@@ -106,7 +108,10 @@ def validate_content(content_dir: Path | None = None) -> List[str]:
 
     # Check each module
     for entry in manifest.modules:
-        module_dir = content_dir / entry.directory
+        module_dir = (content_dir / entry.directory).resolve()
+        if not module_dir.is_relative_to(content_dir.resolve()):
+            errors.append(f"Module directory escapes content root: {entry.directory}")
+            continue
         if not module_dir.exists():
             errors.append(f"Module directory missing: {module_dir}")
             continue

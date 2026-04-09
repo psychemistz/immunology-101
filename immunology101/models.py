@@ -4,10 +4,9 @@ from __future__ import annotations
 
 from datetime import datetime
 from enum import Enum
-from typing import Any, Dict, List, Optional
+from typing import Any
 
 from pydantic import BaseModel, Field, model_validator
-
 
 # ---------------------------------------------------------------------------
 # Exercise types
@@ -38,16 +37,16 @@ class Exercise(BaseModel):
     type: ExerciseType
     difficulty: Difficulty = Difficulty.MEDIUM
     question: str
-    choices: Optional[List[str]] = None  # multiple_choice, ordering
-    left_items: Optional[List[str]] = None  # matching
-    right_items: Optional[List[str]] = None  # matching
+    choices: list[str] | None = None  # multiple_choice, ordering
+    left_items: list[str] | None = None  # matching
+    right_items: list[str] | None = None  # matching
     answer: Any  # str, list[str], dict[str,str] depending on type
-    hint: Optional[str] = None
+    hint: str | None = None
     explanation: str
-    tags: List[str] = Field(default_factory=list)
+    tags: list[str] = Field(default_factory=list)
 
     @model_validator(mode="after")
-    def check_type_specific_fields(self) -> "Exercise":
+    def check_type_specific_fields(self) -> Exercise:
         if self.type == ExerciseType.MULTIPLE_CHOICE and not self.choices:
             raise ValueError("Multiple choice exercises require choices")
         if self.type == ExerciseType.MATCHING:
@@ -64,10 +63,10 @@ class Reference(BaseModel):
     """A citation / learning resource."""
 
     title: str
-    url: Optional[str] = None
+    url: str | None = None
     source: str  # e.g. "OpenStax", "Frontiers"
     license: str = "CC BY 4.0"
-    notes: Optional[str] = None
+    notes: str | None = None
 
 
 # ---------------------------------------------------------------------------
@@ -81,10 +80,10 @@ class Module(BaseModel):
     title: str
     description: str
     order: int
-    prerequisites: List[str] = Field(default_factory=list)
+    prerequisites: list[str] = Field(default_factory=list)
     lesson_content: str = ""  # markdown
-    exercises: List[Exercise] = Field(default_factory=list)
-    references: List[Reference] = Field(default_factory=list)
+    exercises: list[Exercise] = Field(default_factory=list)
+    references: list[Reference] = Field(default_factory=list)
 
 
 # ---------------------------------------------------------------------------
@@ -98,7 +97,7 @@ class ModuleEntry(BaseModel):
     title: str
     description: str
     order: int
-    prerequisites: List[str] = Field(default_factory=list)
+    prerequisites: list[str] = Field(default_factory=list)
     directory: str
 
 
@@ -108,7 +107,7 @@ class CourseManifest(BaseModel):
     title: str
     version: str
     description: str
-    modules: List[ModuleEntry]
+    modules: list[ModuleEntry]
 
 
 # ---------------------------------------------------------------------------
@@ -129,10 +128,10 @@ class ModuleProgress(BaseModel):
 
     module_id: str
     lesson_read: bool = False
-    exercise_results: Dict[str, ExerciseResult] = Field(default_factory=dict)
+    exercise_results: dict[str, ExerciseResult] = Field(default_factory=dict)
     completed: bool = False
-    started_at: Optional[datetime] = None
-    completed_at: Optional[datetime] = None
+    started_at: datetime | None = None
+    completed_at: datetime | None = None
 
     @property
     def score(self) -> float:
@@ -149,13 +148,13 @@ class ModuleProgress(BaseModel):
 class UserProgress(BaseModel):
     """Overall user progress across all modules."""
 
-    modules: Dict[str, ModuleProgress] = Field(default_factory=dict)
+    modules: dict[str, ModuleProgress] = Field(default_factory=dict)
     current_streak: int = 0
     longest_streak: int = 0
     ai_questions_asked: int = 0
-    last_active: Optional[datetime] = None
+    last_active: datetime | None = None
 
-    def is_module_unlocked(self, module_id: str, prerequisites: List[str]) -> bool:
+    def is_module_unlocked(self, module_id: str, prerequisites: list[str]) -> bool:
         if not prerequisites:
             return True
         return all(

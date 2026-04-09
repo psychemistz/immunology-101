@@ -2,14 +2,10 @@
 
 from __future__ import annotations
 
-from typing import Dict, List, Optional
-
-from rich.columns import Columns
 from rich.console import Console
 from rich.markdown import Markdown
 from rich.panel import Panel
 from rich.table import Table
-from rich.text import Text
 
 from immunology101.models import Exercise, ExerciseType, Module, UserProgress
 
@@ -41,7 +37,7 @@ def render_lesson(content: str) -> None:
     console.print("[dim]Press Enter to continue to exercises...[/dim]")
 
 
-def render_module_list(modules: List[Module], progress: UserProgress) -> None:
+def render_module_list(modules: list[Module], progress: UserProgress) -> None:
     """Render a table of all modules with progress status."""
     table = Table(title="Course Modules", border_style="cyan")
     table.add_column("#", style="dim", width=4)
@@ -180,7 +176,12 @@ def render_hint(hint: str) -> None:
 def render_ai_response(response: str) -> None:
     """Render an AI-generated response."""
     console.print()
-    console.print(Panel(Markdown(response), title="[bold magenta]AI Tutor[/bold magenta]", border_style="magenta"))
+    panel = Panel(
+        Markdown(response),
+        title="[bold magenta]AI Tutor[/bold magenta]",
+        border_style="magenta",
+    )
+    console.print(panel)
 
 
 def render_error(message: str) -> None:

@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from typing import Any, Dict, List, Tuple
+from typing import Any
 
 from thefuzz import fuzz
 
@@ -12,7 +12,7 @@ from immunology101.models import Exercise, ExerciseType
 FUZZY_THRESHOLD = 75
 
 
-def grade(exercise: Exercise, user_answer: Any) -> Tuple[bool, str]:
+def grade(exercise: Exercise, user_answer: Any) -> tuple[bool, str]:
     """Grade a user's answer against an exercise.
 
     Returns (correct: bool, feedback: str).
@@ -28,7 +28,7 @@ def grade(exercise: Exercise, user_answer: Any) -> Tuple[bool, str]:
     return grader_fn(exercise, user_answer)
 
 
-def _grade_multiple_choice(exercise: Exercise, answer: str) -> Tuple[bool, str]:
+def _grade_multiple_choice(exercise: Exercise, answer: str) -> tuple[bool, str]:
     """Grade a multiple choice answer (e.g., 'A', 'B', 'C', 'D')."""
     normalized = answer.strip().upper()
     # Accept both "A" and "A)" formats
@@ -44,9 +44,9 @@ def _grade_multiple_choice(exercise: Exercise, answer: str) -> Tuple[bool, str]:
     return False, f"Incorrect. The correct answer is {exercise.answer}."
 
 
-def _grade_matching(exercise: Exercise, answer: Dict[str, str]) -> Tuple[bool, str]:
+def _grade_matching(exercise: Exercise, answer: dict[str, str]) -> tuple[bool, str]:
     """Grade a matching exercise. Answer is a dict mapping left→right."""
-    correct_map: Dict[str, str] = exercise.answer
+    correct_map: dict[str, str] = exercise.answer
     if not isinstance(answer, dict):
         return False, "Please provide your answer as a mapping of left items to right items."
 
@@ -61,7 +61,7 @@ def _grade_matching(exercise: Exercise, answer: Dict[str, str]) -> Tuple[bool, s
     return False, "Incorrect matches:\n" + "\n".join(wrong)
 
 
-def _grade_fill_in_blank(exercise: Exercise, answer: str) -> Tuple[bool, str]:
+def _grade_fill_in_blank(exercise: Exercise, answer: str) -> tuple[bool, str]:
     """Grade a fill-in-the-blank answer using fuzzy matching."""
     expected = str(exercise.answer).lower().strip()
     given = answer.lower().strip()
@@ -78,9 +78,9 @@ def _grade_fill_in_blank(exercise: Exercise, answer: str) -> Tuple[bool, str]:
     return False, f"Incorrect. The expected answer is: {exercise.answer}"
 
 
-def _grade_ordering(exercise: Exercise, answer: List[str]) -> Tuple[bool, str]:
+def _grade_ordering(exercise: Exercise, answer: list[str]) -> tuple[bool, str]:
     """Grade an ordering exercise. Answer is a list of items in user's order."""
-    correct_order: List[str] = exercise.answer
+    correct_order: list[str] = exercise.answer
     if not isinstance(answer, list):
         return False, "Please provide your answer as an ordered list."
 
@@ -102,13 +102,13 @@ def _grade_ordering(exercise: Exercise, answer: List[str]) -> Tuple[bool, str]:
     )
 
 
-def _grade_case_study(exercise: Exercise, answer: str) -> Tuple[bool, str]:
+def _grade_case_study(exercise: Exercise, answer: str) -> tuple[bool, str]:
     """Grade a case study using keyword matching.
 
     The exercise.answer is a list of keywords. The user must mention
     enough of them to pass.
     """
-    keywords: List[str] = exercise.answer
+    keywords: list[str] = exercise.answer
     if not isinstance(keywords, list):
         keywords = [str(keywords)]
 

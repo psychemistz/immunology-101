@@ -2,8 +2,6 @@
 
 from __future__ import annotations
 
-from pathlib import Path
-
 from immunology101.models import UserProgress
 from immunology101.progress import (
     complete_module,

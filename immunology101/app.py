@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 from pathlib import Path
-from typing import Any, Dict, List, Optional
+from typing import Any
 
 from immunology101 import ai
 from immunology101.grader import grade
@@ -27,15 +27,14 @@ from immunology101.renderer import (
     render_info,
     render_lesson,
     render_module_complete,
-    render_module_list,
     render_welcome,
 )
 
 
 def run_course(
-    module_id: Optional[str] = None,
-    content_dir: Optional[Path] = None,
-    progress_dir: Optional[Path] = None,
+    module_id: str | None = None,
+    content_dir: Path | None = None,
+    progress_dir: Path | None = None,
 ) -> None:
     """Launch the interactive course."""
     modules = load_all_modules(content_dir)
@@ -51,15 +50,15 @@ def run_course(
         if not progress.is_module_unlocked(target.id, target.prerequisites):
             render_error(f"Module '{target.title}' is locked. Complete prerequisites first.")
             return
-        _run_module(target, modules, progress, progress_dir)
+        _run_module(target, progress, progress_dir)
     else:
         _run_all_modules(modules, progress, progress_dir)
 
 
 def _run_all_modules(
-    modules: List[Module],
+    modules: list[Module],
     progress: UserProgress,
-    progress_dir: Optional[Path],
+    progress_dir: Path | None,
 ) -> None:
     """Run through all unlocked modules sequentially."""
     for module in sorted(modules, key=lambda m: m.order):
@@ -69,20 +68,20 @@ def _run_all_modules(
 
         mod_prog = progress.modules.get(module.id)
         if mod_prog and mod_prog.completed:
-            render_info(f"Module '{module.title}' already completed (score: {mod_prog.score:.0f}%).")
+            msg = f"Module '{module.title}' already completed (score: {mod_prog.score:.0f}%)."
+            render_info(msg)
             answer = console.input("[dim]Redo this module? (y/N): [/dim]").strip().lower()
             if answer != "y":
                 continue
 
-        if not _run_module(module, modules, progress, progress_dir):
+        if not _run_module(module, progress, progress_dir):
             break  # User quit
 
 
 def _run_module(
     module: Module,
-    all_modules: List[Module],
     progress: UserProgress,
-    progress_dir: Optional[Path],
+    progress_dir: Path | None,
 ) -> bool:
     """Run a single module. Returns False if user quit."""
     render_info(f"\n{'='*60}")
@@ -123,8 +122,8 @@ def _run_exercise(
     module: Module,
     progress: UserProgress,
     ai_available: bool,
-    progress_dir: Optional[Path],
-) -> Optional[UserProgress]:
+    progress_dir: Path | None,
+) -> UserProgress | None:
     """Run a single exercise. Returns updated progress, or None if user quit."""
     render_exercise(exercise, index, total)
 
@@ -169,29 +168,18 @@ def _run_exercise(
 
 def _parse_answer(exercise: Exercise, raw: str) -> Any:
     """Parse raw user input into the appropriate answer type."""
-    if exercise.type == ExerciseType.MULTIPLE_CHOICE:
-        return raw
-
-    if exercise.type == ExerciseType.FILL_IN_THE_BLANK:
-        return raw
-
-    if exercise.type == ExerciseType.CASE_STUDY:
-        return raw
-
     if exercise.type == ExerciseType.MATCHING:
         return _parse_matching_answer(exercise, raw)
-
     if exercise.type == ExerciseType.ORDERING:
         return _parse_ordering_answer(exercise, raw)
-
     return raw
 
 
-def _parse_matching_answer(exercise: Exercise, raw: str) -> Optional[Dict[str, str]]:
+def _parse_matching_answer(exercise: Exercise, raw: str) -> dict[str, str] | None:
     """Parse matching answer like '1A,2C,3B,4D'."""
     left = exercise.left_items or []
     right = exercise.right_items or []
-    result: Dict[str, str] = {}
+    result: dict[str, str] = {}
 
     pairs = [p.strip() for p in raw.replace(" ", "").split(",")]
     for pair in pairs:
@@ -210,7 +198,7 @@ def _parse_matching_answer(exercise: Exercise, raw: str) -> Optional[Dict[str, s
     return result if result else None
 
 
-def _parse_ordering_answer(exercise: Exercise, raw: str) -> Optional[List[str]]:
+def _parse_ordering_answer(exercise: Exercise, raw: str) -> list[str] | None:
     """Parse ordering answer like '1,3,2,4,5,6'."""
     choices = exercise.choices or []
     try:
@@ -228,7 +216,7 @@ def _handle_ai_followup(
     exercise: Exercise,
     module: Module,
     progress: UserProgress,
-    progress_dir: Optional[Path],
+    progress_dir: Path | None,
 ) -> None:
     """Handle optional AI follow-up question after an exercise."""
     console.print("[dim]Ask a follow-up question (or press Enter to continue):[/dim]")

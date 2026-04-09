@@ -2,8 +2,6 @@
 
 from __future__ import annotations
 
-from pathlib import Path
-
 from immunology101.loader import (
     load_all_modules,
     load_exercises,

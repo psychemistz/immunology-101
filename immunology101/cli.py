@@ -2,8 +2,6 @@
 
 from __future__ import annotations
 
-from typing import Optional
-
 import typer
 
 from immunology101 import __version__
@@ -16,7 +14,7 @@ app = typer.Typer(
 
 
 @app.command()
-def start(module: Optional[str] = typer.Argument(None, help="Module ID to jump to")) -> None:
+def start(module: str | None = typer.Argument(None, help="Module ID to jump to")) -> None:
     """Launch the interactive course."""
     from immunology101.app import run_course
 
@@ -51,7 +49,7 @@ def progress() -> None:
 def reset() -> None:
     """Reset all progress."""
     from immunology101.progress import reset_progress
-    from immunology101.renderer import console, render_info
+    from immunology101.renderer import render_info
 
     confirm = typer.confirm("This will delete all saved progress. Continue?")
     if confirm:

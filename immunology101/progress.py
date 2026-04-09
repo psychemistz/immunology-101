@@ -3,10 +3,11 @@
 from __future__ import annotations
 
 import json
+import os
 from datetime import datetime
 from pathlib import Path
 
-from immunology101.models import ExerciseResult, ModuleProgress, UserProgress
+from immunology101.models import ExerciseResult, UserProgress
 
 DEFAULT_DIR = Path.home() / ".immunology101"
 PROGRESS_FILE = "progress.json"
@@ -32,7 +33,8 @@ def save_progress(progress: UserProgress, progress_dir: Path | None = None) -> N
     progress_dir = progress_dir or DEFAULT_DIR
     _ensure_dir(progress_dir)
     path = progress_dir / PROGRESS_FILE
-    with open(path, "w", encoding="utf-8") as f:
+    fd = os.open(path, os.O_WRONLY | os.O_CREAT | os.O_TRUNC, 0o600)
+    with os.fdopen(fd, "w", encoding="utf-8") as f:
         json.dump(progress.model_dump(mode="json"), f, indent=2, default=str)
 
 

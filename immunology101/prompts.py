@@ -25,7 +25,7 @@ def build_exercise_context(
     return (
         f"## Context\n"
         f"**Module**: {lesson_title}\n"
-        f"**Lesson excerpt**: {lesson_excerpt[:500]}\n\n"
+        f"**Lesson excerpt**: {lesson_excerpt}\n\n"
         f"**Exercise**: {exercise_question}\n"
         f"**Explanation provided**: {exercise_explanation}\n\n"
         f"## Student question\n"
